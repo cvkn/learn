@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=System logs
+Comment=Open '/u/cvkr/Desktop/Docs/System logs'
+Icon=text-x-generic
+Name[en_US]=System logs
+Comment[en_US]=Open '/u/cvkr/Desktop/Docs/System logs'
+Icon[en_US]=text-x-generic
+URL=file:///u/cvkr/Desktop/Docs/System%20logs
+Type=Link

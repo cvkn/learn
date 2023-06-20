@@ -1,0 +1,521 @@
+###########################
+Since there is no response from your end, I assume your issue got resolved,
+Closing the ticket now,
+For any further queries feel free to raise a new ticket or send a mail to support@dneg.com
+
+Thanks
+Venkat
+##########################
+Thanks For your response, Closing the ticket now,
+For any further queries feel free to raise a new ticket or send a mail to support@dneg.com
+
+Thanks
+Venkat
+######################
+Your machine is not accessible from my end too, it needs a manual reboot,
+I am forwarding this ticket to onsite team, to resolve your issue,
+please wait till they reboot your machine
+
+Thanks
+Venkat
+#################
+your machine is not accessible from my end, it needs a reboot,
+Machine rebooted, Pre-checks Done,
+I can able to launch pcoip into your Machine,
+please check and confirm from your end,
+
+Thanks
+Venkat
+####################
+Can you please enter the host address as <machinename>.dhcp.dneg.com
+
+Thanks
+Venkat
+###################
+please mention the machine name which you are trying to access,
+Please try explain the error, Or attach a screenshot if possible,
+
+Thanks
+Venkat
+
+#####################
+Are you still facing the slowness with your machine,
+If yes, Please reboot your router and your local machine once then try again,
+And
+I've found That your memory consumption is very high
+please try to free your memory by closing the apps if not using,
+
+Thanks
+Venkat
+#####################
+please mention the error which you are facing while connecting to your VPN
+or attach a screenshot if possible
+
+Thanks
+Venkat
+#######################
+I've found that your machine is offline, i powered it on for you,
+Pre-checks Done,
+I can able to launch pcoip into your Machine,
+please check and confirm from your end,
+
+Thanks
+Venkat
+#####################
+I've found that your machine is in hung state, i restarted it on for you,
+Pre-checks Done,
+I can able to launch pcoip into your Machine,
+please check and confirm from your end,
+
+Thanks
+Venkat
+#######################
+I've found that your machine went in hung state, due to high memory consumption
+Machine rebooted, to ensure all the service back online properly, Pre-checks Done,
+I can able to launch pcoip into your Machine,
+please check and confirm from your end,
+
+Thanks
+Venkat
+#######################
+I've found that your account got locked due to 5 failed login attempts,
+i've unlocked it fr you,
+Please check and confirm from your end
+
+Thanks
+Venkat
+#########################
+I've found that your account got locked due to 5 failed login attempts,
+i've unlocked it fr you,
+Please check and confirm from your end,
+You can change the password through the below link
+http://intranet.zro.dneg.com/password/change
+########################
+I am resetting your password now,
+I am sending it to you through zoom,
+please check with new password,
+You can change the password as you like after 24 hours Through Below link
+http://intranet.zro.dneg.com/password/change
+
+Thanks
+Venkat
+#######################
+for this we require HOD or HOP approval,
+Please tag him/her and ask for approval,
+Once i got the approval then i can proceed to create the VPN Certs
+
+Thanks
+Venkat
+#################
+I can able to pcoip into your machine Now,
+please try to disconnect and reconnect your machine once,
+please check & revert how it works for you
+
+Thanks
+Venkat
+######################
+I've seen that pcoip agent service is crashing in your machine,
+I have restarted the pcoip service in your machine, 
+I can able to launch pcoip service into your machine,
+Please check and confirm from your end,
+
+Thanks
+Venkat
+####################
+please save all your work and logout from your machine,
+I need to login to your machine for installation
+
+Thanks
+Venkat
+#######################
+I've upgraded your zoom account to a Licensed one,
+please logout and login again to reflect the changes
+
+Thanks
+Venkat
+####################
+Could you Please run a ping test from your home machine ?
+
+From Mac-Book (from home)
+Search for Terminal -->  Open it.
+Then type the below
+ping -c 30 {your machine }
+Share the ping output.
+
+From windows machine (from home)
+Go to Start --> Search for "Command Prompt" --> Open it.
+Then type the below
+ping -n 30 machine_name
+Share the ping output.
+########################
+There was some packet drop/lose observed in the report,
+Please try to reboot your ISP router and your personal laptop once,
+Then try to connect to your machine again
+
+Thanks
+Venkat
+#########################
+Can you please let us know,
+Does that alias is going to receive mails from external users/clients
+
+Thanks
+Venkat
+##########################
+Those aliases are Autosynced Show aliases,
+hence if we add/remove any member manually, then the changes will get reverted back automatically.
+The automated alias script uses the shotgun project user connection fields 'Show Role' and 'Department'.
+Project user connections are created when users are linked to a shotgun project.
+So you need to update 'Show Role' and 'Department' in Shotgun.
+Also verify you've correctly added to the CS in order to make the link to the show effective.
+Kindly refer to the below dnet page for more information.
+http://dnet.dneg.com/display/TECH/Autosynced+Aliases%3A+Shows
+
+Thanks
+Venkat
+#####################
+You can access Google Drive from the remote machine in the dneg network. Also, to access it from your home machine, you can use the Google Drive - Off Network app
+
+For more info please follow the link given below. Link will work only inside of the remote machine.
+
+http://dnet.dneg.com/display/DIS/Access+to+Google+Drive+off+the+VPN
+
+Thanks
+Venkat
+#######################
+1. What error are you getting on terminal while crashing?
+2. Is this happening with only one Maya file or multiple maya files?
+3. Have you set show and shot before launching Maya?
+4. Can you please try opening some other Maya file from another Show/Shot?
+5. If its possible, can you please open the same Maya file on another machine
+
+Thanks
+Venkat
+###########################
+I need to access your machine to enter the admin credentials for this, can you please let us know the best time to connect with you on zoom call.
+
+Thanks.
+###################
+your account got locked due to 5 failed login attempts,
+I've unlocked it for you, you can try to login now
+
+Thanks
+Venkat
+######################
+
+####################
+VPN Certs created and sent to your office drive, and VPN QR code sent to your office mail ID,
+please Download the VPN files & Scan the QR code in authenticator,
+Install the Viscosity freshly in your mahcine,
+I've provided you the drive access for downloading VPN setup,
+Please download an install the viscosity zip file
+pLease revert if you face any issues
+
+Install Viscosity:
+Open DNEG google drive,
+for this open gmail --> click on 9 dots at top right corner --> click on drive -->
+download the WIN_DNEG_VPN.exe and install it,
+(if your drive access denied contact us for drive access)
+
+VPN profile will preset in the viscosity app for you, click on the VPN profile,
+enter your user credentials & google authenticator password to connect to VPN,
+
+Then try to launch PCOIP, Please check if that works for you
+
+Thanks
+Venkat
+#######################
+I've provided you drive access,
+please Download the VPN files & Scan the QR code in authenticator,
+Install the Viscosity freshly in your machine,
+Please download an install the viscosity zip file
+pLease revert if you face any issues
+
+Install Viscosity:
+Open DNEG google drive,
+for this open gmail --> click on 9 dots at top right corner --> click on drive -->
+download the WIN_DNEG_VPN.exe and install it,
+(if your drive access denied contact us for drive access)
+
+VPN profile will preset in the viscosity app for you, click on the VPN profile,
+enter your user credentials & google authenticator password to connect to VPN,
+
+for pcoip and nomachine you can open the official webpages of pcoip and nomachine
+https://docs.teradici.com/find/product/software-and-mobile-clients
+open the link select the operating system & press on downloads and scripts
+scrool down --> agree & download now,
+then install pcoip
+
+https://www.nomachine.com
+
+Then try to launch PCOIP, Please check if that works for you
+
+Thanks
+Venkat
+#########################
+I've provided you drive access,
+please Download the desired site VPN files sent to your Drive & Scan the QR code (sent to your personal&DNEG mail) in authenticator,
+Install the Viscosity as an upgrade in your machine,
+Please try to connect to desired VPN with new setup files,
+Please revert if you face any issues
+
+Install Viscosity:
+Open DNEG google drive,
+for this open gmail --> click on 9 dots at top right corner --> click on drive -->
+download the WIN_DNEG_VPN.exe latest one and install it,
+(if your drive access denied contact us for drive access)
+
+VPN profile will preset in the viscosity app for you, click on the VPN profile,
+enter your user credentials & google authenticator password to connect to VPN,
+
+Thanks
+Venkat
+######################
+I've checked that nomachine is already installed in your machine, for IVY browser you need to have a linux machine,
+If you don't have a linux machine you can use it by Through nomachine,
+
+for IVY through Windows
+1. Open nomachine
+2. Add connection
+3. Host address lonnomachine2, Host name (as your wish)
+4. Login with your credentials
+5. Create Virtual Desktop
+6. It will launch a linux machine,
+7. Open terminal and Type ivybrowser (no space)
+
+And it will launch IVY browser
+
+Thanks
+Venkat
+####################
+Hi Xavier Thompson
+
+Make sure you have Google chrome as your default browser.
+
+If you are in Linux machine , please set chrome as default browser.
+
+System >  Control Center > Personal > Preferred Applications > Web Browser > Select Chrome
+
+Clear browser cache. Logout from all browser.
+On your computer, open Chrome.
+At the top right, click More .
+Click More tools. Clear browsing data.
+At the top, choose a time range. To delete everything, select All time.
+Next to "Cookies and other site data" and "Cached images and files," check the boxes.
+Click Clear data.
+
+Then open zoom
+
+You need to choose 'Sign in with SSO' over a zoom, then when asked for the domain, type dneg
+It'll then ask you for your Google account details. Enter dneg mail credientials.
+
+Let me know if you have any difficulties
+####################
+If you are using a windows machine
+
+please check the viscosity app version, 
+If it is not 1.8.5, please follow the below steps,
+You need to uninstall the viscosity app and re-install it from the DNEG google drive,
+
+1.Uninstall Viscosity:
+close the viscosity app and services by viscosity,
+press windows --> search for viscosity --> right click on viscosity --> uninstall --> will open the uninstaller window, double click on viscosity --> confirm for uninstallation,
+
+
+2.Install Viscosity:
+Open DNEG google drive,
+for this open gmail --> click on 9 dots at top right corner --> click on drive -->
+download the WIN_DNEG_VPN.exe and install it,
+(if your drive access denied contact us for drive access)
+ 
+3. VPN profile will preset in the viscosity app for you, click on the VPN profile,
+enter your user credentials & google authenticator password to connect to VPN,
+
+Then try to launch PCOIP, Please check if that works for you
+
+Thanks
+Venkat
+#################
+Please try to clear cache and history of chrome using below steps and check.
+
+On your computer, open Chrome.
+At the top right, click More .
+Click More tools. Clear browsing data.
+At the top, choose a time range. To delete everything, select All time.
+Next to "Cookies and other site data" and "Cached images and files," check the boxes.
+Click Clear data.
+Let us know how it goes.
+
+Thanks
+Venkat
+####################
+Now Licenses got released Your can try to login now
+If you failed to get one, Please try again after some time
+
+Thanks
+Venkat
+############################################
+please mention the machine name which you are trying to access,
+Please try explain the error, Or attach a screenshot if possible,
+
+Thanks
+Venkat
+#########################
+unreal
+
+I've installed unreal updater in your machine,
+For installing UE5
+Launch the DNEG Unreal updater from the search bar, it will do nothing, but you will now be able to access it from the bottom right corner of Windows interface
+Please select up arrow in bottom right of the taskbar for the hidden section,
+There you will find the unreal updater, Right click on it,
+And select update the unreal and select the desired version,
+it will install it automatically,
+please reboot your machine after installation,
+
+Please let me know if you face any issues,
+
+Thanks
+Venkat
+
+Try this also?
+
+Launch the DNEG Unreal updater, it will do nothing, but you will now be able to access it from the bottom right corner of Windows interface
+Press the UP arrow, it will open a program list
+Right click the unreal updater and select install new version
+Install 4.26.0 (the first version on top)
+Run 4.26.0 it will ask you for admin access, answer NO
+After completing the installation of 4.26.0 use the Unreal updater to install 5.0.3
+#########################
+Can you please answer this set of standardized questions to assess your requirement:
+
+Will you need a Full license?
+What team you will need to be a part of?
+Purpose of using Miro?
+Dnet page for the same: http://dnet.dneg.com/display/DIS/Miro+Tech+Support+How-To%27s#MiroTechSupportHowTo's-RequestingAccess
+
+Thanks
+Venkat
+#######
+By adding you to the group it should help list the miro app in the 9-dot menu at the top right side. We need the sign-in to happen via sso login method which uses your dneg's google login credentials. You should be able to access it externally as well.
+
+Thanks
+Venkat
+#########3
+we have provided you the full miro license
+please check and confirm from your end
+
+Thanks
+Venkat
+#######################
+
+For this requirement I will need the approval from DNEG HR London (hr-lon@dneg.com) on the ticket.
+Once HR confirms the photo we can upload it to whos who page in Dnet and same will propagate to google profile pic as well.
+
+Also the photo should be as per the DNEG policy according to below points.
+
+The picture should not be a scanned passport sized image.
+The picture should have plain light background.
+Photo resolution should not be small.
+Photo should be landscape. No portrait allowed. (Just keep the phone horizontal and click a picture)
+Approx 35+% of the photo should be covered by face.
+If photo is clicked on phone then enable 'auto rotate' and hold the phone horizontally to click the photo.
+No selfie poses.
+Thank you!
+############################
+DNEG as a whole is migrating away from Microsoft Office.
+
+As a DNEG employee, you have access to a suite of Google applications such as Docs, Sheets, Forms, and Slides which integrate seamlessly with DNEG's Google Workspace.
+Should you require help with understand or using a feature within a G Suite product, please send a request to support@dneg.com
+
+In order to be approved for an exemption to access a Microsoft Office product, you must answer the following questions:
+1) What is the full name and company email address of the user requesting approval?
+2) Which specific Microsoft application is the user requesting?
+3) What specific kind of work will be done on the Microsoft product?
+4) What specific feature is unavailable on a Google application which prevents the completion of work?
+
+Thank you for submitting your request, we look forward to receiving your response.
+3#########################
+Please answer the following standardized questions for recording permissions for Zoom.
+
+What service needs to be enabled (in this case it's zoom recording)?
+Why the service needs to be enabled?
+Is the person requesting permissions using a DNEG Macbook or Mac Mini, if so, what number?
+(NOTE: Recording is restricted to DNEG imaged Macbooks & Mac Mini's)
+Who will be using the service?
+Lastly, what is the business justification or need for this to be enabled?
+
+Zoom DNET resource pages:
+http://dnet.dneg.com/display/IS/Zoom+Security+Governance
+http://dnet.dneg.com/display/TECH/Zoom
+http://dnet.dneg.com/pages/viewpage.action?pageId=484387361
+http://dnet.dneg.com/display/PIC/ZOOM?preview=%2F482002530%2F482002532%2FZoom-Instructions.pdf
+
+The response to these questions are taken as acknowledgement of the security policies in place when using Zoom recording.
+
+Thanks.
+*****************
+Since these rules are in place by the InfoSec team,
+we cannot have an exclusion to enable the recording permissions
+if you are not being provided a Dneg encrypted system to work.
+
+Thanks
+Venkat
+#####################################
+1. To delete all the temporary files follow the below steps:
+
+Step 1: Press Windows key + R to open the Run command. Then type “temp” in the search field and press OK
+Step 2: Now, select all temp files using ctrl + A and then press delete.
+2. Deleting local temp files:
+To delete the local temporary files follow the below steps:
+
+Step 1: Press Windows key + R  to open the Run command. Then type “%temp%” in the search field and press OK.
+Step 2: Now, select all temp files using ctrl + A and then press delete.
+
+3. Deleting local temp files using Prefetch:
+To delete the local temporary files using Prefetch follow the below steps:
+
+ Step 1: Press Windows key + R  to open the Run command. Then type “Prefetch” in the search field and press OK
+ Step 2: Now, select all prefetch files using ctrl + A and then press delete.
+
+4. Finally, delete all the files from recycle bin too. All temporary files are deleted, and now you are good to go!!
+##################################
+Shared Drive access:
+
+Please refer this DNET page section 5.2 for creating Google drive setup for the client and provide the neccessary information.
+
+If the shared drive to be created is intended for external sharing, the following elements/information are to be provided:
+
+Client authorization and approval that Drive can be used as a data repository and collaboration platform is required before creating the shared Drive. This can either be a contractual line item or can be authorized by a FTE (client/third-party) or sufficient seniority who has authority to grant permission.
+A valid signed NDA is in effect between the company and the client/third-party.
+Client domains must be provided so that they can whitelisted as any other domains are restricted.
+The required timelines for data to be available via the shared drive must be provided. This should ideally be in line with the contract term.
+After the requirement / contract term has expired, drive data must be transferred to a suitable company FTE or archived appropriately.
+All external accounts must be removed after the contract / requirement end date.
+Client emails can be used for access to the shared drive and will be under the control of the shared drive manager.
+Adding Coral Gibson for visibility
+
+Thanks,
+
+Can you please answer the questionnaire below? Please see this page for more reference. http://dnet.dneg.com/pages/viewpage.action?pageId=585740657
+
+What types of data are to be stored, processed and transferred to and from the Drive. This is important if company/client confidential data is in scope.
+Will the requirement be to extend access to the shared drive’s contents externally, if Yes, please refer to next Section
+Data storage, processing and transfer will be strictly consumed internally for departmental/inter-departmental communication and collaboration.
+HoD authorization is required.
+Which colleagues require access to the shared drive.
+Thanks!!
+############################
+user Display name change
+1) Since the name gets synced from Workday, an initial request needs to be raised with HR team for name change in the Workday.
+
+2) As we have switched now over to Zoom SSO all the data will be fetched from IMS. To change your name in zoom you will need to create a ticket with IMS team emailing to imssupport@dneg.com to update your name in the GED database.
+
+3) Lastly, the VPN certificates need to be revoked and once the changes are reflected, a new QR code will be provided to you from us.
+
+We can do this for you, just wanted to make you aware that with this process, we will also need to delete your VPN certificate and reinstate it which does take some time to sync.
+
+Thanks
+Venkat
+####################################
+
+
+

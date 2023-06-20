@@ -1,0 +1,62 @@
+when user was not able to recieve JIRA tickets we need to add alternate mail ID as 
+
+	<username>.dneg-forwarding.com
+
+
+#/tools/SITE/etc/google/newstarters --add --user <username>
+
+will give the permission for user to access the google drive & VPN files
+
+
+
+#sudo /tools/SITE/etc/google/reset2fa --add <username> 
+
+will reset the 2 Factor authentication of the user
+
+when user login next time it will ask user to set the new 2FA with out asking the password
+
+
+
+#sudo /tools/SITE/etc/google/groupsutil --user username@dneg.com --group groupname
+
+to add user mail id  to the group email alias 
+
+
+/tools/SITE/etc/google/newstarteraccess --add --user username
+
+
+Once the requirement is completed, remove the user from new starters
+
+/tools/SITE/etc/google/newstarteraccess --remove --user username
+
+2) Reset 2FA.
+
+Add the user:
+
+/tools/SITE/etc/google/reset2fa --add username
+
+Remove the user:
+
+/tools/SITE/etc/google/reset2fa --remove username
+
+3) Adding user to alias.
+
+- Add user to group ('member' role)
+
+# sudo /tools/SITE/etc/google/groupsutil --user knna@dneg.com --group ims-lon@dneg.com
+  
+- Grant 'owner' role to user
+      
+# sudo /tools/SITE/etc/google/groupsutil --user knna@dneg.com --group ims-lon@dneg.com --owner
+  
+- Remove user from group
+      
+# sudo /tools/SITE/etc/google/groupsutil --user knna@dneg.com --group ims-lon@dneg.com --remove
+
+4) If a user is not receiving jira notifications, add "username@dneg-forwarding.com" as an alternative email on his profile from google admin dashboard.
+
+5) Alias naming convention:
+
+http://dnet.dneg.com/display/~dopi/DNEG+Naming+convention#expand-CURRENTDNEGVFXNamingConvention
+
+

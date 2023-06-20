@@ -1,0 +1,140 @@
+
+Create Openvpn keys/certs and QR code
+
+For the purpose of the WFH set-up, creating vpn keys/certs can now be done by any Tech Support.
+
+
+Determine from the ticket where to create keys (in London it is lonopenvpn2). For other sites, use the openvpn-master server in the role for your site
+
+openvpn-mastersites:
+  - chnopenvpn1
+  - lonopenvpn2
+  - mtlopenvpn1
+  - mumopenvpn1
+  - sydopenvpn1
+  - vanopenvpn1
+  - zroopenvpn1
+
+
+Step-1
+
+login to the techVlan Machine & Go to the webpage http://lonopenvpn2/openvpn/index.php?Action=NewCertificate (see vault for login credentials)
+# ssh machine name -X
+# chrome
+
+to create the certificate
+
+fill in the following details
+Common Name: <enter the name as seen from dnwho>
+Department: <select department as seen from dnwho>
+Email: <enter the email address as seen from zimbra>
+Country/State/City: <set accordingly>
+
+on same machine run
+#root@lonopenvpn2:~#/etc/openvpn/setup_otp <username>
+
+Check if the user's home directory was created in lonopenvpn2:/u/<username>
+
+root@lonopenvpn2:~# ls -lda /u/<username> the output was below
+
+drwxr-xr-x 2 sral users 34 Mar 4 19:50 /u/sral.google.Authenticator
+
+###############################################################
+
+1) Login to #remote lon or remote mtl for montreal
+#ssh lonws151 -X   or mtlws9008
+#chrome
+
+2) Go to http://lonopenvpn2/openvpn/index.php?Action=NewCertificate and search for her name under certificates.
+From your local:
+# ssh lonws151
+# ssh root@lonopenvpn2
+
+3) Run the revoke command:
+
+root@lonopenvpn2:~# /etc/openvpn/revoke_user vlfi
+Using configuration from /etc/openvpn/easy-rsa/openssl.cnf
+Revoking Certificate 07B9.
+Data Base Updated
+Using configuration from /etc/openvpn/easy-rsa/openssl.cnf
+C = UK, ST = London, L = London, O = Double Negative, OU = prod, CN = Vanessa Louise Finn, emailAddress = vlfi@dneg.com
+error 23 at 0 depth lookup: certificate revoked
+error 07B9.pem: verification failed
+
+Verify if it is revoked.
+
+prit@drybrook /u/prit vpnQRutil.py | grep fcho
+fcho  False
+
+If false, then already in revoke state.
+
+Search for the user again and it will show revoked.
+
+In case if the above command fails, you can try below commands:
+
+apt-get upgrade
+cd /etc/openvpn/easy-rsa
+. ./vars
+./revoke-full 023B
+./revoke-full 02B6
+
+4) Revoke the qr code:
+sudo su
+lonws158 /u/aast # vpnutil --user vlfi --revoke
+vlfi has a active VPN, revoking QR code
+
+Exit lonopenvpn2 and on your linux workstation, run "vpnQRcode , depending on how you want to deliver the QR code.
+
+Send via email directly to the user's personal email address, if they have set it in their Workday profile (this is probably the most common option):
+
+# vpnQRcode -u <username> -s lonopenvpn2 -m -p 				--> Sending to personal email of user
+
+# vpnQRcode -u <username> -s lonopenvpn2 					--> To display the QR code on terminal
+
+# vpnQRcode -u <username> -s lonopenvpn2 -m -t <mail id> 	--> Send via email to a specific email address
+
+# vpnQRcode -u <username> -s lonopenvpn2 -m 				--> Send via email to tech & hr alias
+
+Ensure the user receives the QR code by asking the user directly. If they are on-site, have them come into Tech room and scan the QR code from your desktop.
+Send VPN credentials to Google drive
+run dnvpn2google. Enter the appropriate LOGIN and SERVER:
+
+$ /tools/SITE/etc/bin/dnvpn2google -u <username> -s lonopenvpn2
+Getting the VPN config from lonopenvpn2 for user mcu
+Grabbing OSX config from lonopenvpn2
+Grabbing Windows config from lonopenvpn2
+Uploading to Google Drive for mcu
+
+MAC_dneg_VPN.zip uplaoded!
+WIN_dneg_VPN.exe uplaoded!
+Working-From-Home.pdf uplaoded!
+finished
+
+
+$ /tools/SITE/etc/bin/dnvpn2google -u USER -s lonopenvpn2 -c thinclient
+Getting the VPN config from lonopenvpn2 for user mcu
+Grabbing ThinClient config from lonopenvpn2
+Writing to file successfully!
+dneg-thinclient-vpn-config.run uplaoded!
+finished
+
+
+Install/Configure Viscosity on the DNEG laptop/machine
+This section assumes the user and laptop/machine is inside the dneg premises, and TECH have total admin privilege on the machine.
+
+Have the user download all the files in their briefcase under the folder "VPN". Extract the appropriate zip file for the OS.
+The certs/configs can be installed 2 ways, one which requires admin privileges.
+Non admin method:
+open Viscosity, Click on Add icon (bottom left) > Import Connection > From File
+Goto the unzipped folder and select Preconfigure folder.
+
+Admin method:
+goto the unzip folder
+drag and drop "Preconfigure" folder into /Applications which will prompt for Admin privileges.
+Successful setup means you will see, in Viscosity, "dneg" listed as an option to connect to.
+Install/Configure Viscosity on a personal laptop/machine
+The user has been given a PDF document of the installation instructions in their briefcase. It is a copy of this dnet document Working from Home
+
+The user should have total admin privileges on their machine so they should be able to follow the instructions and install the software. Should there be any problems on their end, they should email support@dneg.com.
+
+

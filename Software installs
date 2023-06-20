@@ -1,0 +1,63 @@
+######################
+Houdini install
+
+install houdini and assign licence server
+
+download houdini .exe to desktop on remote machine from \\dist\dist\sideFX folder
+run the exe file to install houdini,
+For licensing part select the third optiion as "i have paid for a licence, and use sideFX as lcense server"
+then press on file and change the license location to the server,
+then enter the server address as lonlic1 or zrolic1
+Then relaunch houdini, 
+Done.
+
+http://dnet.dneg.com/display/TECH/Installing+Houdini+on+Windows+10
+######################
+mari install
+
+remote to the windows machine 
+\\dist\dist\Windows_apps/
+copy the file to desktop, execute the .exe file
+After that press windows search for envi
+clickon environmental variables
+creat new variables 
+
+FOR MARI
+
+foundry_LICENSE = 4101@stereo-foundry-license
+####################
+fusion install
+
+remote to the windows machine 
+\\dist\dist\Windows_apps/
+copy the file to desktop, execute the .exe file
+After that press windows search for envi
+clickon environmental variables
+creat new variables 
+FOR FUSION
+
+EYEON_LICENSE_FILE = 27000@fusion-license
+
+FUSION_LICENSE_SERVER = fusion-license
+######################
+http://jira/browse/TECH-996640 --> Perforce install in windows machine
+
+remote to the windows machine 
+\\dist\dist\Windows_apps/perforce/
+copy the file to desktop
+execute the .exe file
+enter the username when it prompts to enter (machine owner userid or your userid) 
+
+Done
+######################
+UE5 install
+
+\\dist\dist\Windows_Apps\unrealengine-win-updater
+install it and open it through the installer in bottom right corner in task bar,
+press on it and select the updater and select the desired version,
+it will install it automatically,
+
+Done
+#########################
+
+

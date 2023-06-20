@@ -1,0 +1,87 @@
+dnb	http://jira/browse/TECH-986459 --> New show setup
+
+Log into lonbatch1 and become root
+
+# ssh lonbatch1
+# sudo su - (you must be logged in as root and root environment)
+
+1. show setup
+
+# dnBuildTools show P30RE
+
+Directories will get created for the show
+Reading '/tools/SITE/etc/tools.setup/show_default.setup'
+– Building directories for '/tools/P30RE'...
+
+Executing 'shaketemplate ${SHOW}'
+installing: /tools/P30RE/shake/4.10/macros/startup/ui/P30RE_template.h
+installing: /tools/P30RE/shake/4.21/macros/startup/ui/P30RE_template.h
+Executing 'cp -p /tools/SITE/data/general.dat /tools/${SHOW}/data'
+Executing 'cp -p /tools/SITE/data/pipe/INTERNAL.svg /tools/${SHOW}/data/pipe'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/12.5/OPlibraries'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/13.0/OPlibraries'
+Done.
+
+2.Job setup
+
+# jobssetup -j P30RE --div VFX --org DNEG
+
+Some errors will occur while executing this command we need to retry till it gives the desired output
+Ref:http://dnet.dneg.com/pages/viewpage.action?spaceKey=TECH&title=New+Show+Creation+Procedure
+
+Show setup was completed in london site
+
+3.Syncronize the created show to desired site
+
+
+Show setup was completed in london site
+but we need to sync the show to requied site also
+while running the jobsetup command we can create a PR for making changes in sitedata file
+
+# git branch --> it will show the default branch
+# git checkout master --> it will change the default to master branch
+	(we should only create branches from master)
+# git pull --> to refresh the repo
+# git checkout -b hotfix/Add_showname_in_Mum
+# cd showname
+# vim sitedata.yaml
+	(every show must be added in global shows)
+	(every show must be added in desired site)
+	(every show need to insert in show-secure & show-sync)
+	(every show must be added in alphabetical order only)
+	-->save the file after editing
+# git diff
+# git commmit -m "comment for adding show with ticket number" sitedata.yaml
+# stash-review --> it will generate a PR-URL copy it and ask for approval in CST thrugh the URL,
+					(it needs to approved by two people)
+	After approval it need to be mergerd with master file,(Ask in Tech global for PR Merge)
+
+4.need to wait till jenkins sync to be completed, (jenkin Url's available in DNET Page)
+
+5.cross check for confirmation with /jobs/showname --> directories should be there
+
+6.we need to sync the setup manually also for cross check
+
+# sync_util -j showname -s lon -d site
+
+7. Lastly we need to update the epic ticket for changing the status of all linked tickets
+
+# update_showsetup_epic --unstall-ptsup-tickets <epic_ticket_id> it is available on ticket page,
+
+
+8 need to provide the google drive setup with the required directory hierarchy & content manager access for users
+
+#dnvault
+search for tech-drive (copy the mail id and password of tech-drive-mgmt@dneg.com)
+open remote site of show,
+open chrome login with drive credentials,
+open drive
+create directory with show code
+sub directories as required,
+provide the content manager access to the users as required,
+open direcory, press on 3 dots, add content managers,
+add them click on save
+access provided to the users and will send a mail to the user
+
+##################################
+

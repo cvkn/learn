@@ -1,0 +1,75 @@
+http://jira/browse/TECH-946789
+
+user was unable to login to the machine
+
+#ping <machine name>	pinging
+
+#whichsys <machine name> --site all
+
+#pinky --> user who are all logged into the machine 
+
+found that another user was logged into the machine 
+
+in pcoip 2 user will not be able to login at a time in one machine
+
+############################################################################################
+
+http://jira/browse/TECH-946791, http://jira/browse/TECH-947490, 
+
+user was unable to login to the machine
+
+#ping <machine name>	-->Not pinging
+
+#whichsys <machine name> --site all 	--> found that its a VM
+
+opened vcenter through chrome 
+
+search for the machine and found that machine was pwered off
+
+turned it on and checked -->ping, ssh, Nvidia-driver
+
+#ping <machine name>
+#ssh  <machine name>
+#nvidia-driver --report
+
+found that installed & running versions are different
+
+Graphics card       : NVIDIA Corporation GA102GL [A40]
+PCI device ID       : 10de:2235
+Running version     : 
+Installed version   : 470.103.01510.85.02
+Wanted version      : 510.85.02http://jira/browse/TECH-948922
+Legacy card         : no
+Grid card           : yes
+Non-RPM driver      : no
+Hardware            : vm
+ESX host version    : 510.85.03
+ 
+ERROR: running version and installed version mismatch!
+
+uninstalled the previous version
+
+#sudo yum remove -y nvidia-x11-drv
+
+installed the required version
+
+#sudo nvidia-driver --auto
+
+check the report again for confirmation
+
+Graphics card       : NVIDIA A40-16Q
+PCI device ID       : 10de:2235
+Running version     : 510.85.02
+Installed version   : 510.85.02
+Wanted version      : 510.85.02
+Legacy card         : no
+Grid card           : yes
+Non-RPM driver      : no
+Hardware            : vm
+ESX host version    : 510.85.03
+
+informed user to check and login
+
+###############################################################################################
+http://jira/browse/TECH-948922
+

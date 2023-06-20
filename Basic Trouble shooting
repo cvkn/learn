@@ -1,0 +1,165 @@
+asic logs/things we need to check if your able to ssh/remote to any machine.
+
+Linux
+
+1) pinky
+2) dmesg -T
+3) /var/log/messages
+4) /var/log/Xorg.100.log
+5) Disk space
+6) User quota
+7) Nvidia-driver / nvidia version
+8) Zombie processes (ps -aux | grep defunct)
+9) Network speed (ethtool)
+10) Processes which consume more CPU/RAM memory/GPU memory. (top command)
+11) Render running on machine (nimby -i)
+
+
+
+Windows
+
+1) If you or the user are not able to PCOIP to a windows machine then you can try the below mentioned step and then try to login.
+
+Clear the contents from  "C:\ProgramData\Teradici\PCoIPAgent\licensing\5" and restart the PCoIP Graphic Agent service.
+
+2) Event Viewer
+3) Disk space
+4) Network adapter speed
+5) Network mounts
+6) Nvidia drivers
+7) Processes which consume more CPU/RAM memory/GPU memory.
+
+
+
+Make sure you run the below commands as root(sudo su)
+
+PCOIP/sssd/machine related issues.
+
+1) Checking the PCOIP logs.
+
+# sudo systemctl status pcoip -l
+
+If you do not find any pcoip errors from the above command, then execute the below mentioned commands.
+
+# cd /var/log/pcoip-agent/
+# less agent.log
+# less desktop.log
+# less session-launcher.log
+
+If there are any errors, then you can restart the pcoip service once the user confirms that he has saved everything.
+
+# service pcoip restart
+
+
+2) Checking the SSSD logs.
+
+# sudo systemctl status sssd
+
+If you do not find any sssd errors from the above command, then execute the below mentioned commands.
+
+# cd /var/log/sssd
+# less sssd.log
+# less sssd_AD.log
+
+If there are any errors, then you can restart the sssd service.
+
+# service sssd restart
+
+
+3) Checking the Nvidia graphic card details:
+
+# nvidia-driver --report
+
+If there is a version mismatch, you can uninstall and install the wanted graphic card version.
+
+http://dnet.dneg.com/display/~dph/Nvidia+Drivers+Update
+http://dnet.dneg.com/display/TECH/Nvidia+drivers+on+Linux
+
+
+
+4) To view the total amount of free space available along with the amount of memory used and swap memory in the system, and also the buffers used by the kernel.
+
+# free -g
+
+
+5) To clear cache memory, use the below mentioned command. (After the user has saved everything)
+
+# echo 3 > /proc/sys/vm/drop_caches
+
+
+6) Checking the log messages:
+
+# cd /var/log/
+# less messages
+
+
+7) If you are not able to login to the machine via ssh, check the system logs for that machine to check if any issues (In the end the machine will have to be rebooted manually)
+
+Login to nomachine for the particular site to which that machine belongs to. 
+
+# cd /jobs/SITE/syslog/
+# cd workstation or windows or vmware
+# cd machine_name
+# less 2022-03-02-syslog.log
+
+
+8) Check the top command to view list of all the processes running on your machine and also the CPU and memory usage.
+
+# top -c
+
+
+9) Check the GPU Memory usage on the machine.
+
+# nvidia-smi 
+
+
+
+10) Use nimby command to check if any tractor processes are running in the background.
+
+To check for local render:
+# nimby -i
+
+To kill local render:
+# nimby
+
+http://dnet.dneg.com/display/FEATURE/nimby+and+Tractor
+
+
+11) To force a user to logout or kill, confirm if everything is saved from the user's end and then use the below mentioned command.
+
+# pkill -9 -u username
+
+
+12) To check for any hardware or kernel related issues, you can use below mentioned command:
+
+# dmesg -T
+
+
+
+13) To check if any user is logged in to the machine.
+
+# pinky
+
+
+14) You can monitor CPU usage, Memory utilisation, Disk usage, process and thread allocation, battery performance, Plug and play devices, Processor performance, file system and more.
+
+# sar -r
+
+
+
+15) To check disk usage.
+
+# df -h
+
+
+16) check network speed. (eth0/eth1)
+
+# sudo ethtool eth0 | grep Speed
+
+
+17) To get a list of temp machines in MTL/VAN:
+
+# whichsys ,-, --site mtl | grep mtlws
+# whichsys ,-, --site van | grep vanws
+
+Note: Use the grep command accordingly.

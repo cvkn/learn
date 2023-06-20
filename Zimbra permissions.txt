@@ -1,0 +1,1492 @@
+1] Zimbra permissions -
+   /tools/SITE/etc/zimbra/zmpermissions --own alias_name user_id
+AYx5m8fVr5IB
+
+PTMP*DNEG*TECH*882321511869198FLT5
+
+
+2] To check System logs
+   /var/log/Xorg.100.log
+   cd /jobs/SITE/syslog/workstation/ardvar - syslogs
+   ls
+   less 2021-04-30-syslog.log
+
+
+3] Nomachine logs
+   nxserver.loge is for Nomachine
+   less /usr/NX/var/log/nxserver.log
+linux-generic linux-headers-generic linux-image-generic
+F
+4] PCOIP logs
+   /var/log/pcoip-agent/session-launcher.log
+   /var/log/pcoip-agent/agent.log
+   /var/log/Xorg.100.log
+   desktop.log
+HOU/VRR/0421/880733
+
+5]  For PCOIP XOR log error or broken pipe error
+    1)sudo salt-call state.sls roles.nomachine-homework --state-verbose=False
+    2)remove folder pcoip-agent from /etc/ , /usr/lib/ , /var/lib/
+    3)sudo salt-call state.sls roles.pcoip-homework --state-verbose=False
+    4)run salt again
+salt-call -l info state.highstate
+
+6] dnwho -V rsuk
+    to check status of employee
+
+7] lic --help
+
+   lic --mari
+
+8] dmesg -T /var/log/messages
+
+
+9] Clear cache
+   echo 3 > /proc/sys/vm/drop_caches
+
+
+
+10] slow internet/ black screen
+
+If you are facing again black screen, it could be internet issue at your place .
+
+So could you Please run a ping test from your local machine to your DNEG workstation?
+
+From Mac-Book
+
+Search for Terminal -->  Open it.
+
+Then type the below
+
+ping -c 30 lonws319
+
+Share the ping output.
+
+ 
+
+From windows Workstation
+
+Go to Start --> Search for "Command Prompt" --> Open it.
+
+Then type the below
+
+ping -n 30 lonws319
+
+Share the ping output.
+
+ 
+
+Perform internet speed test on browser of your home computer by visiting https://speed.measurementlab.net Send a screenshot of internet speed test too.
+
+
+
+11]  /u/rsuk/mari
+     reset preferences of mari
+
+
+12]  Find out logs of london open vpn sever by user name using grep
+
+     nomachine2 /jobs/SITE/syslog/server # less lonopenvpn*/2021-06-16-syslog.log | grep mke
+
+
+13]  import bookmarks from firefox to chrome
+
+     You can export bookmarks from Firefox and then import into Chrome.
+
+To export bookmarks from Firefox press Ctrl+Shift+O combination, which will open Library window. In that Library window, under the "Import and Backup"  menu, click "Export Bookmarks to HTML" option to export bookmarks.
+
+To import bookmarks into Chrome, use same combination Ctrl+Shift+O, which opens Bookmark manager. On the top right corner in Bookmark manager there are three dots in vertical, click it for options. Click on "Import Bookmarks" option and point to previously exported bookmarks from Firefox.
+
+
+14]  df -h
+     free -g
+     dmesg -T
+     /var/log/messages
+     sar -r
+     pcoip logs
+     sssd logs
+     user quota
+
+15]  mumsensu1/#/events
+  http://dnet.dneg.com/display/TECH/Sensu+Alerts
+
+16]  cd /hosts/dist/dist
+     cd /win/zbrush
+    \\dist\dist - for windows machine
+\\dist\dist\Win\Autodesk\Maya
+autodesk-license - for maya license
+
+17]  Adding or removing user in auto created aliases
+
+     cd git/site-etc-cfg-systems/common
+     git pull
+     vi department_overrides.yaml
+     make changes
+     git diff
+     commit -m "" department_override.yaml
+     git push
+
+git clone copy clone link from stash
+git commit --amend to amke changes in commit message
+git branch
+git checkout master
+git rebase --abort
+git rebase -i HEAD~2
+git checkout <filename>
+
+
+
+18]  Viscosity license
+     Name : Double Negative
+     Key: VXDC-YD6Z6X-ZPBJWN-YAAUVY-QKIDAT-L4LF3I
+     Email : blank
+
+19] copy file to different location
+    cp -rv file-name destination
+
+20]  sensu-client
+
+21]  usersetup - creation of user
+     usersetup retire - retire user
+
+
+22]  Add a user
+     /tools/SITE/etc/google/reset2fa --add --user djul
+
+     Remove a user
+     /tools/SITE/etc/google/reset2fa --remove --user
+
+23]  When face issue in ivy
+     rename /u/mkk/.wizqt
+
+24]  For hector issue
+     rename .hector file     piduXo7Po
+
+25] rename folder
+    mv foldername newfoldername
+
+26]  sudo smartctl -H /dev/sdb
+     last -x | head | tac
+
+27]  a] Open a shell.
+     b] By default, we should update the photos in Site Zero. If not already, please SSH into zrobatch1.
+     c] Sync photos from your computer. Eg: sudo rsync -av hostname:/user_data/john.smith.jpg /user_data/whoswho/
+     4] Root password will be needed to sync files.
+     5] Once the sync is successful, cd to /user_data/whoswho and run the below command.
+        sudo whoswho john.smith.jpg john.smith
+
+28]  So need to go to zrozimbra2, then sudo su zimbra, then dnvpn2zimbra --user <alias> --client google  --server lonopenvpn2
+ And for thinclient
+    aast@zrozimbra2 /u/aast sudo su zimbra
+    [zimbra@zrozimbra2 aast]$ /tools/SITE/etc/bin/dnvpn2zimbra -u pcla lonnopenvpn2 --client thinclient
+    Getting the VPN config from lonopenvpn2 for user pcla
+    Grabbing ThinClient config from lonopenvpn2
+    Writing to file successfully!
+    dneg-thinclient-vpn-config.run uplaoded!
+    finished
+
+29]  File permissions
+     # Change permission
+     sudo chmod 755 /u/deng
+
+
+     # Verify
+     ls -ld /u/deng
+     drwxr-xr-x 107 dneg user 16384 Jan 16 01:60 dneg
+
+30] for screenshot - use dnfax
+
+31]  pmann@lonws347 / sudo !!
+sudo chmod -R 777 /user_data/
+pmann@lonws347 / ls -lad /user_data/
+drwxrwxrwx 3 root root 18 Jul  8 16:23 /user_data/
+
+32]  Please try to login now and setup 2 Factor Authentication.
+
+Also please follow some steps below for 2-Step Verification:
+
+Open Chrome Browser
+Type - accounts.google.com
+Once you logged in
+Click 9 dots in top right corner
+Go to Accounts
+On the left hand side click Security Tab
+Scroll Down click 2-Step Verification
+Enter your mobile number
+Now you will get code in your phone
+enter the code
+Its Done !
+
+For scanning QR code in your Google Authenticator:
+
+Scroll Down in that same page and check Authenticator App
+Click Set up
+What kind of phone you have ?
+Scan QR code in your phone
+Open Google Authenticator App in your phone- Click + sign in bottom right corner - Scan a barcode
+Its done !
+
+33] archive directories for usercheck ticket
+    sudo /tools/SITE/tech/bin/usersetup --archive --force
+
+teamviewer quicksupport
+
+34] https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4625
+
+35]  Please reach out to your Champion for assistance regarding usage and paths.
+
+36] PCOIP sound issue
+    Can you go to Linux Start Menu > System > Preferences > Hardware > Sound. Head to output tab, make sure PCoIPVirtualOutput is checked.
+
+And if it's check and you are still not able to hear sound then can you please try relaunching pcoip and check. Let me know if you need any help.
+
+Thanks!!
+
+37]  stash permissions
+   To check ssh key is there in user's profile
+   sudo ls -hl /u/smia/.ssh/
+   Then open .pub file and copy ssh key from there
+   cat /u/smia/.ssh/smia_dneg.pub
+
+38]  ivy panel
+mate-panel --reset
+
+39] Visit calendar.google.com
+Click on Main Menu at the Left Tom side (Near to Calendar Icon)
+Find Other Calendar and
+click on + sign
+Select Browse resourcesClick on (Show)
+You will find (Show) SUPER Lon Calendar
+You can tick mark this calendar to add this under your calendar.
+
+
+
+AND
+
+gcalpermissions
+Required Flags	sudo /tools/SITE/etc/google/gcalpermissions --share c_1880gibaaqn3ghj8lalqcotenfiku@resource.calendar.google.com --delegate jrun@dneg.com --owner
+Optional Flags	--reader --writer --owner (default if unspecified is --reader)
+Usage	This grants share access to someone's calendar
+
+40]  How to sync file from mumbai /u/rsuk to london /u/rsuk
+rsync -avz OpenEXRFormat.8bi root@lonbatch1:/u/rsuk/
+
+41] To access /u/rsuk on windows machine
+\\u\u
+
+42] manual
+ps -ef\ grep -i processname or id
+
+43] whichsys lonws1121 --siteall
+
+44] /tools/SITE/data/photoshop/Win/paintHDR/OpenEXRFormat.8bi
+dragged it into C:\Program Files\Adobe\Adobe Photoshop CC 20xx\Required\Plug-Ins\File Formats
+
+45] For zbrush license free
+   http://zrolic1:4103/home.asp
+
+46] check software version from repo
+rpm -qa | grep chrome
+
+47] Adding Users to Yodel / Jodel
+In this example, to yodel-proposed...:
+
+After the user's manager has approved, add to the appropriate Alias; yodel-proposed via Zimbra Admin
+
+Run the Jenkins sync; tech-ldapsync_ad (now on ZRO)
+
+Check if the user has been added to the group on the server in question:
+
+ssh yodel
+getent group alias_yodel-proposed | grep --colour <user>
+
+If not, clear the cache:
+
+sudo sss_cache -g alias_yodel-proposed
+
+Check once more!
+
+48] For VPN OR Code
+vpnQRcode -u [username] -s lonopenvpn2 -m -t [email]
+
+49] Amnuseinvec1
+
+50] Nomachine2 and nomachine3 session negotiation failed
+  rename users folder /tmp/nxdir/cmoo/ and we can move user's home profile to different location
+
+51] to check VPN logs
+  cd /jobs/SITE/syslog/server/
+  less mtlopenvpn*/2022-04-16-syslog.log | grep -i suni
+
+52] /tools/SITE/etc/google/getuserinfo --user username
+
+53]  We have installed nuke 12 on your system.
+
+    For the workaround for getting the license on your workstation, please
+
+   Open CMD and type:
+
+   set foundry_LICENSE=4101@foundry-license
+
+54] groupsutil to add user in group or alias
+   sudo /tools/SITE/etc/google/groupsutil --user jmw@dneg.com --group cardsdev@dneg.com --remove
+
+55] /tools/SITE/etc/google/newstarteraccess -add --user <USERNAME>
+
+56]  vpnQRcode -u vsta -s openvpn-master -m -p
+
+57] env BOB_CATEGORY_MARI_EXTENSIONS=5R6v2 dnmari --version 4.6v4
+
+58] Cron job command
+    0 0 */3 * * sudo /tools/SITE/etc/bin/pcoip-quality wavelet >& /dev/null
+
+https://docs.teradici.com/find/product/software-and-mobile-clients/21.03
+
+59] Zoom admin login
+ username : tech@dneg.com
+ Password : !sKDiEbp33333
+
+60] VLAN machine
+ssh -X virar
+
+
+61] sntp -sS time.apple.com
+
+
+62] Please follow some below steps to setup Gmail 2 FA
+1] Go to mail.google.com
+2] Click on 9 Dots at the Right side (Google Apps)
+3] Click on Account -> Security
+4] Go to 2-step verification, click on Arrow (>)
+5] Authenticator App -> change phone
+6] select the phone type (Android or iphone), Click on Next
+7] QR code will be generated
+
+
+63] show access
+     vsom@zrobatch1 /u/vsom grep ncaz /tools/SITE/data/log/ldapsync/ldapsync_ad_openvpn.log | grep AMBRE
+64]] cat the key from /tools/SITE/etc/cfg/systems/filevault/$macname and try to login with wrong password constantly till it prompt for recovery key then enter the presented recovery key into the login screen. After that, open a Terminal, switch to root and run diskutil apfs updatepreboot / Then Logout from that system. Ask the user to login with their current AD password. It'll prompt to update or reset the keychain. It's better off resetting the keychain. Restart the system and see if the user can login now.
+
+and it helped .Thanks a lot Kamesh and Tom for help
+65] mtlws9008 mtl vlan machine
+66] ubuntu root password - CackJow8
+67] Cretaing new certificate
+
+Below are the steps which we require to create a new VPN certificate for the user
+
+1) login to tech vlan machine
+2) launch chrome and open the link below as per the site. The below link is for the montreal site
+http://mtlopenvpn2/openvpn/index.php?Action=ViewCertificate&id=0644
+
+3) click on new certificate and find the user
+check the user's details in that list
+
+4)To revoke the older certificates
+
+login to openvpn server(site specific) with the ubuntu root password
+ssh root@mtlopenvpn2
+
+Use the below command to revoke the old certificate
+/etc/openvpn/revoke_user sapm
+
+where sapm is the username
+
+or
+
+cd /etc/openvpn/easy-rsa
+. ./vars
+./revoke-full 00D
+
+5)To revoke qr code
+vpnutil --user sapm --revoke
+
+Till now we have revoked the old QR code and the old certificate
+
+You can confirm the same by going to the list and besides the user name under certificates column it will be displayed as "revoked"
+
+6)After the above steps open the link  http://mtlopenvpn2/openvpn/index.php?Action=ViewCertificate&id=0644 to create the new certificate
+click on the new certificate and enter the user details. Make sure all the details are properly filled
+
+7)click on Make
+The new VPN certificate for the user will be ready for the user with a different entry.
+
+8) Now send the new QR code and VPN setup to the user and add hi in the new starters group so that he can download the VPN setup from the drive.
+
+
+69] rm -frv *
+70] tractor preference reset
+mtltractor1 /var/spool/tractor/users/afi # mv preferences preferences.old
+
+71] google account photo sync job
+http://zrojenkins1/job/tech-google-sync-users-ad-full-thumbnails-dneg/
+
+72] maxon logs
+    ssh zrolic1
+    /var/log/maxon.log
+
+73] Run sensucheck on lonopenvpn3 or 5
+/etc/sensu/plugins/dneg/check_apt.sh
+
+74] Windows machine slow issue
+Would you please provide us with more information to help us evaluate your issue.
+
+Include as much useful information as you can:
+
+Name of your department and the show/shot/asset you are working on
+Full file path
+A concise description of what's going wrong - eg which DCC and tool is causing the problem
+Steps to recreate the issue
+What you've done to try and resolve the issue already
+Other supporting information - screenshots, gifs, error logs/messages, tractor job IDs
+Gifs can be easily created using Peek - GIF Capture Gifs are incredibly helpful for explaining an issue
+....
+
+75} munki command for chrome crash issue on mac
+a]sudo /usr/local/munki/managedsoftwareupdate
+b]managedsoftwareupdate --installonly
+c]/Applications/Cylance/Uninstall\CylancePROTECT.app/Contents/MacOS/Uninstall\CylancePROTECT --password=co2-outrage
+d]https://chromeenterprise.google/browser/download/#mac-tab
+
+76] Adding designation to jotitle.json
+
+cd git
+git clone ssh://git@stash/tech/google.git
+cd google
+git pull
+git branch
+git branch -b hotfix/something
+vi jobtitle.json
+git diff
+git commit -m "message"
+stash-review
+you will get a link paste that in central group for merging
+
+77] Viscosity helper tool issue
+1] sudo launchctl unload "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist"
+2] sudo rm "/Library/PrivilegedHelperTools/com.sparklabs.ViscosityHelper"
+3] sudo rm "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist"
+4] sudo rm -R "/Library/Application Support/Viscosity"
+
+https://www.sparklabs.com/support/kb/article/uninstalling-viscosity-mac/
+
+78] Google drive access
+http://jira/browse/TECH-723312
+WKR | Shared Drive for Audrey Ford
+Steps which i have followed for giving Access for WKR_LON folder on google drive to Audrey Ford
+
+1] connect to London machine in my case i have connected to remote lon
+
+2] Login to dnvault in your machine (PcoIP)
+
+    Search for :- tech_google_drive_management
+
+    Copy the Credentials
+
+3] Login to https://drive.google.com/drive/my-drive
+
+   sign in with the Credentials that you got from the dnvault  (tech_google_drive_management )
+
+4] Search for WKR_LON,
+
+   Right click > share -> afor@dneg.com > Select content manager from the Drop down as it will be by default       but we have to make sure.
+
+
+
+78] /bin/ldapsearch -LLL -h ad.dneg.com -x -b "OU=People,DC=ad,DC=dneg,DC=com" '(uid=jmb)' title
+
+79] Show aliases Autosync
+"cva-creature-prodsupes-lon" alias is Autosynced Show alias, hence if we add/remove any member manually, then the changes will get reverted back automatically.The automated alias script uses the shotgun project user connection fields 'Show Role' and 'Department'.
+
+Project user connections are created when users are linked to a shotgun project. So you need to update 'Show Role' and 'Department' in Shotgun. Also verify you've correctly added to the CS in order to make the link to the show effective.
+
+Kindly refer the below dnet page for more information.
+
+http://dnet.dneg.com/display/TECH/Autosynced+Aliases%3A+Shows
+
+Let me know if there is anymore query.
+
+Thanks you!
+
+
+80] Command to check OS version.
+cat /etc/centos-release
+
+81] sudo usersetup --retire -u username
+
+82] lonsensu1/#/event
+
+83] getfacl show
+id nvan
+sudo stefacl -m u_nvan:rwx AMBRE
+
+84] london CS access
+rdesktop -g 1920x1080 msproject1.dneg.com
+rdesktop -g 1920x1080 msproject1.dneg.com  and after that for Entering User name and password. to use only this dneg\username process to type the user name and can proceed for login with her Password.
+
+85] flush dns
+ ipconfig /flushdns
+ipconfig /renew
+
+86] vanws1467 /user_data # lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  100G  0 disk
+├─sda1   8:1    0    1G  0 part /boot
+├─sda2   8:2    0   16G  0 part [SWAP]
+└─sda3   8:3    0   83G  0 part /
+sdb      8:16   0  500G  0 disk
+vanws1467 /user_data # cd ..
+vanws1467 / # mv /user_data /user_data_old
+vanws1467 / # ls -ld /user_data_old/
+vanws1467 / # cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 23:00:53 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=bf0920e5-8670-463a-97ff-e101fa50e7c9 /                       xfs     defaults        0 0
+UUID=cb496562-4ef6-421e-81c6-a0eac57dd647 /boot                   xfs     defaults        0 0
+UUID=b2083584-17d4-45c4-832d-7cb1403ad395 swap                    swap    defaults        0 0
+apps:/apps		/apps	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+tools:/tools		/tools	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+u:/u		/u	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+vanws1467 / # lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  100G  0 disk
+├─sda1   8:1    0    1G  0 part /boot
+├─sda2   8:2    0   16G  0 part [SWAP]
+└─sda3   8:3    0   83G  0 part /
+sdb      8:16   0  500G  0 disk
+vanws1467 / # mkfs.xfs /dev/sdb1 -f
+vanws1467 / # fdisk /dev/sdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): p
+
+Disk /dev/sdb: 536.9 GB, 536870912000 bytes, 1048576000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b22ff
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): p
+
+Disk /dev/sdb: 536.9 GB, 536870912000 bytes, 1048576000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b22ff
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1):
+First sector (2048-1048575999, default 2048):
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-1048575999, default 1048575999):
+Using default value 1048575999
+Partition 1 of type Linux and of size 500 GiB is set
+
+Command (m for help): p
+
+Disk /dev/sdb: 536.9 GB, 536870912000 bytes, 1048576000 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b22ff
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            2048  1048575999   524286976   83  Linux
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+vanws1467 / # mkfs.xfs /dev/sdb1 -f
+meta-data=/dev/sdb1              isize=512    agcount=4, agsize=32767936 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=131071744, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=63999, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+vanws1467 / # cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 23:00:53 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=bf0920e5-8670-463a-97ff-e101fa50e7c9 /                       xfs     defaults        0 0
+UUID=cb496562-4ef6-421e-81c6-a0eac57dd647 /boot                   xfs     defaults        0 0
+UUID=b2083584-17d4-45c4-832d-7cb1403ad395 swap                    swap    defaults        0 0
+apps:/apps		/apps	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+tools:/tools		/tools	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+u:/u		/u	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+vanws1467 / # vi /etc/fstab
+vanws1467 / # vi /etc/fstab
+vanws1467 / # lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  100G  0 disk
+├─sda1   8:1    0    1G  0 part /boot
+├─sda2   8:2    0   16G  0 part [SWAP]
+└─sda3   8:3    0   83G  0 part /
+sdb      8:16   0  500G  0 disk
+└─sdb1   8:17   0  500G  0 part
+vanws1467 / # mount -a
+mount: mount point /user_data does not exist
+vanws1467 / # mkdir /user_data
+vanws1467 / # mount -a
+vanws1467 / # lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  100G  0 disk
+├─sda1   8:1    0    1G  0 part /boot
+├─sda2   8:2    0   16G  0 part [SWAP]
+└─sda3   8:3    0   83G  0 part /
+sdb      8:16   0  500G  0 disk
+└─sdb1   8:17   0  500G  0 part /user_data
+vanws1467 / # cd /user
+user_data/     user_data_old/
+vanws1467 / # cd /user_data_old/
+vanws1467 /user_data_old # ll
+total 0
+drwxrwxrwt 2 root root 6 Jan 10 15:24 .tmp
+vanws1467 /user_data_old # rsync -avPz .tmp /user
+user_data/     user_data_old/
+vanws1467 /user_data_old # rsync -avPz .tmp /user_data/
+sending incremental file list
+.tmp/
+
+sent 58 bytes  received 20 bytes  156.00 bytes/sec
+total size is 0  speedup is 0.00
+vanws1467 /user_data_old # cd /user
+user_data/     user_data_old/
+vanws1467 /user_data_old # cd /user_data/.tmp/
+vanws1467 /user_data/.tmp # ll
+total 0
+vanws1467 /user_data/.tmp # pinky
+Login    Name                 TTY      Idle   When             Where
+fffr     Fernandes Fabian Fr  pts/0    00:15  2022-01-19 10:47 mumws5387.dhcp.dneg.com
+aast     Ajit Ashok Tate      pts/1           2022-01-19 10:50 mumws5129.dhcp.dneg.com
+vanws1467 /user_data/.tmp # cd ..
+vanws1467 /user_data # cd ..
+vanws1467 / # ls -ld /user
+user_data/     user_data_old/
+vanws1467 / # ls -ld /user_dat
+user_data/     user_data_old/
+vanws1467 / # ls -ld /user_data
+drwxr-xr-x 3 root root 18 Jan 19 11:01 /user_data
+vanws1467 / # chmod -R 777 /user
+user_data/     user_data_old/
+vanws1467 / # chmod -R 777 /user_data/
+vanws1467 / # cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 10 23:00:53 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=bf0920e5-8670-463a-97ff-e101fa50e7c9 /                       xfs     defaults        0 0
+UUID=cb496562-4ef6-421e-81c6-a0eac57dd647 /boot                   xfs     defaults        0 0
+UUID=b2083584-17d4-45c4-832d-7cb1403ad395 swap                    swap    defaults        0 0
+apps:/apps		/apps	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+tools:/tools		/tools	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+u:/u		/u	nfs	_netdev,hard,intr,nodev,proto=tcp,rw	0 0
+/dev/sdb1		/user_data		xfs	defaults	0 0
+
+
+80] Megascans plugin for maya
+
+Remote in to the machine.
+Open file browser to \\dist\Windows_Apps\quixel\
+Copy zip folder and bridge.exe to desktop.
+Unzip folder to desktop.
+Create folder in the location /Users/<username>/Documents/maya called Modules.
+Copy contents of 6.1 folder from desktop to above location.
+
+Open notepad and copy in the below lines:
++ Megascans 6.1 C:\Users\<user>\Documents\maya\modules\MSLiveLink
+scripts: C:\Users\<user>\Documents\maya\modules\MSLiveLink
+Save as quixel.mod to the previously created modules folder.
+
+Double click the bridge.exe icon to install the bridge app.
+
+81] for viscosity helper toll issue
+sudo launchctl unload "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist"
+
+sudo rm "/Library/PrivilegedHelperTools/com.sparklabs.ViscosityHelper"
+
+sudo rm "/Library/LaunchDaemons/com.sparklabs.ViscosityHelper.plist"
+
+sudo rm -R "/Library/Application Support/Viscosity"
+
+82] sudo systemctl list-units --state=STATE
+
+83] Please follow below steps to connect to your nomachine.
+
+    1] Make sure you are connected to Viscosity vpn
+
+    2] Open NoMachine application
+
+    3] Click on Add
+
+    4] enter hostname (for example "vanws1327")
+
+    5] Click on connect
+
+    6] Click on YES
+
+    7] Enter your login Credentials
+
+    Let us know if you face any issue.
+
+
+84] google-chrome-stable --proxy-auto-detect
+
+85] I've shared the excel credentials with you on email.
+
+First you will need to login to https://www.office.com/
+
+After you have logged in you can refer this DNET page for setting up MFA : http://dnet.dneg.com/pages/viewpage.action?pageId=402797164
+
+Once all the setup is done you can then open any office application on your system and login with the credentials
+
+Let me know if you face any issues.
+
+86] License key update repo in git
+http://stash/projects/TECH/repos/licenses/browse
+
+87] The process on the DNET page is a bit outdated, as it was last modified back in 2020.
+
+The current procedure in place is to have the requester answer the following survey below:
+
+1] What service needs to be enabled?
+2] Why the service needs to be enabled?
+3] Are they using a DNEG device? This is important if data download features are requested!
+4] The business justification for enabling the service.
+5] Who will be using the service?
+Please note that permissions will be restricted to company encrypted MacBooks or approved MacMini's for those who will need to drive and record sessions.
+
+The most important bit is to make sure that the requester is using Zoom off a DNEG encrypted device.
+Once the relevant information is supplied, we then give Zoom recording permissions to the user!
+
+Cheers,
+
+Lisa
+
+88] NVRAM and PRAM reset
+
+Can you try this below process and see if it resolves the issue.
+
+Reset NVRAM:
+Shut down your Mac, then turn it on and immediately press and hold these four keys together: Option, Command, P, and R. You can release the keys after about 20 seconds, during which your Mac might appear to restart.
+
+Please try the following as well:
+
+Reset SMC:
+
+Shut down your Mac. On your built-in keyboard, press and hold all of the following keys. Your Mac might turn on.
+
+Control on the left side of your keyboard
+Option (Alt) on the left side of your keyboard
+Shift on the right side of your keyboard
+
+Keep holding all three keys for 7 seconds, then press and hold the power button as well. If your Mac is on, it will turn off as you hold the keys. Keep holding all four keys for another 7 seconds, then release them. Wait a few seconds, then press the power button to turn on your Mac.
+
+Let me know how it goes.
+
+Thanks!!
+
+89] login root --> chown -R thatuser:wheel /Users/thatuser
+Reboot
+And try
+
+chown -R agall:staff agall
+
+90] http://dnet.dneg.com/display/TRAINING/DNEG+Essentials#expand-WorkingfromHome
+
+91] disable hardware acceleration on chrome
+
+To fix this issue while on chrome, click the 3 dots in the top right > settings > from the search bar on top, enter 'acceleration'. The 'use hardware acceleration when available' option should pop up, disable it then restart chrome and check.
+
+For reference you can visit this link: https://www.howtogeek.com/412738/how-to-turn-hardware-acceleration-on-and-off-in-chrome/
+
+Let me know.
+
+Thanks!
+
+92] Date time sync for authenticator
+Can you please perform below steps and check if it is working for you or not?
+
+1] Go to the main menu on the Google Authenticator app
+
+2] Select Settings
+
+3] Select Time correction for codes
+
+4] Select Sync now
+
+Let us know how it goes.
+
+Thanks!!
+
+
+93] Gmail not working on remote machine due to netskope
+There's some issue going on with the Google services in Chrome browser on Linux machines. The engineering team is investigating the issue.
+
+A master ticket has already been created for the investigation of the issue. You can follow the details at the following link: http://jira/browse/IS-278. I have also linked the master ticket in this ticket.
+
+To get Google services working in the Chrome browser, Can you try the following steps:
+
+1] Clear the Google chrome browser cache by pressing together key (Ctrl + Shift + Delete) and select time range (All time) option.
+
+2] Then logout from the system and re-login back.
+
+3] Then open the command line terminal, and execute the following command:
+
+google-chrome-stable --proxy-auto-detect
+This will again open up the Google chrome browser.
+
+4] Now try accessing your Dneg gmail account, mail.google.com in this Google chrome browser.
+
+Let us know if this works or you still face the issue.
+
+Thank you!!
+
+94] mumwin10test - mumbai windows testing machine
+
+95] We have now assigned you a MS office license. MS office currently has a problem within the dneg network, we've raised it as a high priority with our provider.
+
+You should now be able to use Excel on your local machine. It should be able to authenticate outside of DNEG with your dneg ID. You need to login with your normal username, it will then redirect you to google login for sso.
+
+Thanks.
+
+96] Installation of Cortex
+Installation notes: Once done with the installation, it will prompt you to enable kernel extensions. Open it while it shows. It will open System Preferences --> Security & Privacy --> General automatically. On the bottom left, unlock the icon, click allow, tick both items, hit ok. click quick and reopen as you just enabled a kernel extension. Go to System Preferences --> Security & Privacy --> Privacy --> Full disk access --> Add a new item +, locate Cortex XDR in Applications folder. Close System Preferences. Open Cortex XDR on the top menu bar (shield icon) - open console, make sure it says the protection is enabled and it shows a Connection URL (ch-dneg.traps.paloaltonetworks.com). You must follow all these instructions, only then Cortex will work properly. Thanks. Any doubts, text here.
+
+97] Zoom Recording Questionaire
+Please answer the following standardized questions for recording permissions for Zoom.
+
+(1)What service needs to be enabled (in this case it's zoom/meet recording)?
+(2)Why the service needs to be enabled?
+(3)Is the person requesting permissions using a DNEG Macbook or Mac Mini, if so, what number?
+--(NOTE: Recording is restricted to DNEG imaged Macbooks & Mac Mini's)
+(4)Who will be using the service?
+(5)What is the business justification or need for this to be enabled?
+
+Zoom DNET resource pages:
+
+http://dnet.dneg.com/display/IS/Zoom+Security+Governance
+http://dnet.dneg.com/display/TECH/Zoom
+http://dnet.dneg.com/pages/viewpage.action?pageId=484387361
+http://dnet.dneg.com/display/PIC/ZOOM?preview=%2F482002530%2F482002532%2FZoom-Instructions.pdf
+
+The response to these questions are taken as acknowledgement of the security policies in place when using Zoom recording.
+
+98] Marvellous designer
+http://localhost:1947/_int_/config_to.html
+
+99] lonsecurefs1 access
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git checkout -b hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git branch
+* develop
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git checkout master
+Branch master set up to track remote branch master from origin by rebasing.
+Switched to a new branch 'master'
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git branch
+  develop
+* master
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (5/5), done.
+From ssh://stash/tech/salt
+ + 841e294...cb44d5a hotfix/pgagent-ims-dw -> origin/hotfix/pgagent-ims-dw  (forced update)
+Current branch master is up to date.
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git checkout -b hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire
+Switched to a new branch 'hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire'
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git branch
+  develop
+* hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire
+  master
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba vi smb.con
+smb.conf                         smb.conf.el8                     smb.conf.hr-secure-server.mtl    smb.conf.linuxnfs                smb.conf.mtlprodfs1              smb.conf.prodfs-secure.el8       smb.conf.vanprodfs1
+smb.conf.dfs                     smb.conf.el8.example             smb.conf.hr-secure-server.mum    smb.conf.linuxnfs.el8            smb.conf.mumprodfs1              smb.conf.psuedo-netapp3          smb.conf.yodel
+smb.conf.dfs.el8                 smb.conf.hr-secure-server.chn    smb.conf.hr-secure-server.van    smb.conf.lonprodfs2              smb.conf.prodfs1                 smb.conf.psuedo-netapp4
+smb.conf.el7                     smb.conf.hr-secure-server.lon    smb.conf.jodel                   smb.conf.lontermu                smb.conf.prodfs-secure           smb.conf.stereo-deadline-server
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba vi smb.con
+smb.conf                         smb.conf.el8                     smb.conf.hr-secure-server.mtl    smb.conf.linuxnfs                smb.conf.mtlprodfs1              smb.conf.prodfs-secure.el8       smb.conf.vanprodfs1
+smb.conf.dfs                     smb.conf.el8.example             smb.conf.hr-secure-server.mum    smb.conf.linuxnfs.el8            smb.conf.mumprodfs1              smb.conf.psuedo-netapp3          smb.conf.yodel
+smb.conf.dfs.el8                 smb.conf.hr-secure-server.chn    smb.conf.hr-secure-server.van    smb.conf.lonprodfs2              smb.conf.prodfs1                 smb.conf.psuedo-netapp4
+smb.conf.el7                     smb.conf.hr-secure-server.lon    smb.conf.jodel                   smb.conf.lontermu                smb.conf.prodfs-secure           smb.conf.stereo-deadline-server
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba vi smb.conf.hr
+smb.conf.hr-secure-server.chn  smb.conf.hr-secure-server.lon  smb.conf.hr-secure-server.mtl  smb.conf.hr-secure-server.mum  smb.conf.hr-secure-server.van
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba vi smb.conf.hr-secure-server.lon
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git diff
+diff --git a/formula/samba/files/etc/samba/smb.conf.hr-secure-server.lon b/formula/samba/files/etc/samba/smb.conf.hr-secure-server.lon
+index 6953238..00f3f82 100644
+--- a/formula/samba/files/etc/samba/smb.conf.hr-secure-server.lon
++++ b/formula/samba/files/etc/samba/smb.conf.hr-secure-server.lon
+@@ -143,4 +143,4 @@ valid users = @company_na_hr,spotfire,rddu,msdu,ratr,ggd
+
+ [consolidated_margin_spotfire]
+ path = /user_data/accounts/global_sync/Consolidated Margin Report_for Spotfire
+-valid users = ratr,spotfire
++valid users = ratr,spotfire,msdu
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba git commit -m "Adding msdu to Consolidated Margin Report_for Spotfire share - TECH-823756" .
+[hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire 8e98eea] Adding msdu to Consolidated Margin Report_for Spotfire share - TECH-823756
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba stash-re
+stash-review     stash-review.old
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba stash-review
+stash-review: INFO: pushing hotfix/Add_msdu_to_lonsecurefs1_consolidated_margin_spotfire to origin
+stash-review: INFO: creating pull request via Bitbucket Rest API
+stash-review: INFO: stash review URL at http://stash/projects/TECH/repos/salt/pull-requests/7151
+stash-review: INFO: sending to techbot
+rsuk@mumws5273 /u/rsuk/salt/formula/samba/files/etc/samba cd
+
+
+
+100] Show access
+I have checked and tried accessing the show path with your login but it seems like you doesn't have access of CVA show, and this needs to be done from shotgun.
+Please contact your production manager and ask then to give you access of CVA show.
+
+Please refer below dnet page for more information.
+
+http://dnet.dneg.com/pages/viewpage.action?spaceKey=SHOTGUN&title=How+to+Link+People+to+a+Project
+http://dnet.dneg.com/display/SHOTGUN/SG+-+Permissions+-+SHOW+ACCESS
+
+Thanks.
+
+101]
+ whichswitch lonws338
+
+102] git sitedata
+git brach master pahije
+git pull
+git checkout -b hotfix/Adding_BRSRE_in_lon_Mtl
+git branch
+vi sitedata.yaml
+you need to add show in show secure section and show sync section
+git commit
+stash-review
+
+103] pcoip-free-workstations -d 15 -w -v
+
+104] arsal@dneg.com
+     esav@dneg.com
+
+105] Unretire account
+Steps to Unretire the account of any User 1] Go to admin.google.com and search for the user and check whether the account is active or inactive same needs to be checked using dnwho username 2] If it is inactive or retire inform in CST group and tag Pritesh to recover the account. 3] Once it is recovered wait for 5 to 10 mint and check in Admin.google.com once the account shows as active.4] ssh lonbatch1 5] sudo su 6] usersetup --debug --unretire --username xxxx7] It will take more then 24 hours to recover the account8] Reference ticket http://jira/browse/TECH-844368
+
+106] Mac Library Repair
+2] run command:
+
+pwd
+to check the username of the user
+
+3] then run command:
+
+login root
+4] Then do:
+
+cd /Users
+5] In the permissionsit ws showing the 4 digit id instead of username, so now run the chown command on that users home directory, to :
+
+chown -R pbou:staff pbou
+
+
+107] IVY browser resize
+Hi Elena Rapondzhieva,
+
+if your local system resolution is lower than remote machine than you may face this issue . Resolution should be full HD 1920x1080
+
+you can please try this keyboard shortcut to drag screen for application .
+Please press "Windows Key" from your key board and left mouse button to click & drag the shotbuild window as per your requirement
+
+Alternatively you can also use "Alt key" and F7 key together to drag the window.
+
+Hope this helps!
+
+108] Google off-drive
+Please try below steps to access Google Drive Off-Network app.
+
+1] Please go to https://mail.google.com/mail/
+2] At the Right side you can click on 9 Dots.
+3] You will see Off-Network Drive option, you can click and try to access the Drive.
+For more information you can refer the below Dnet page and try it out which has the steps to access the drive off-network
+http://dnet.dneg.com/display/IS/DNEG+Google+Workspace+%3A+Access+to+Google+Drive+off+the+VPN
+Please let me know if you need any help.
+
+
+109] Oxford spelling dictionary for Chrome
+To enable it:
+
+In an internet machine, turn on the Oxford spell checking with "Settings > Advanced > Languages > Language > Add Language > English (United Kingdom, Oxford English Dictionary spelling) > Add", then enable "Spell Check", then in the new dropdown enable English (United Kingdom, Oxford English Dictionary spelling).
+Then browse to the file ~/.config/google-chrome/Dictionaries/en-GB-oxendict-9-0.bdic and drag it to your desktop on the host machine to transfer it.
+Move the en-GB-oxendict-9-0.bdic file to ~/.config/google-chrome/Dictionaries/
+Then on the host machine's chrome do step 1 again, to the point where you got the "Spell check dictionary download failed." message before but now it should succeed because the file already exists.
+
+110] Redshift logs
+zrolic1 /var/log # less redshift_rlm.log
+zrolic1 /var/log # cat redshift_rlm.log
+
+11] redshift environment variables
+redshift_LICENSE = 5058@redshift-license
+
+run salt first
+salt-call state.sls windows-desktop.cinema4d.redshift
+
+
+111] to create script
+sudo touch substance.sh
+change permission
+sudo chown jwes substance.sh
+sudo chmod jwes substance.sh
+then vi substance.sh and put code which you want.
+
+1. Shared folder access e.g. HR/Accounts/Prod share folders and approval process.
+2. Applications with their preferences folder name, location and also their temp files name with location.
+
+112] For cinesync issue
+Try clicking on 'Network Setup' -> check 'Connect via a proxy server' and put proxy in the field. For the port put 3128. You can click Test Connection after and it should pass. You probably have to sign in again after and then you can try connecting to the session.
+connecting to cinesync without connecting to the viscosity and without the proxy settings. (if you are outside DNEG network)
+
+If you are connected to DNEG network, you will need to enable to proxy settings as mentioned in the above comment.
+
+
+
+113] Sound issue
+Please go to Main Menu --> System --> Preferences --> Hardware --> Sound and check if all the settings over there is properly set or not.
+
+Also check volume on your pcoip machine is proper or not.
+
+If it still doesn't work then go to main menu and click on logout and then login again. Let me know how it goes.
+
+Thanks!!
+
+114] makemkv license
+M-modTPtgwgM8M9q500gAfxmsiejhkUcjYVsVAVnxbN1C5InbHChHGEkxZC0ibu6Dhg@
+
+115] Enable bluetooth
+http://dnet.dneg.com/display/TECH/End+Point+Protector
+
+116]http://jira/browse/TECH-862891
+
+117] zrobatch1 : /u/vap/scripts/user_creation
+
+118] I could not ping mumdc1 even if the power state on on, so did following steps to reboot it.
+
+[root@mumesx2:~] vim-cmd vmsvc/power.getstate 7620
+Retrieved runtime info
+Powered on
+[root@mumesx2:~] vim-cmd vmsvc/power.off 7620
+Powering off VM:
+[root@mumesx2:~] vim-cmd vmsvc/power.getstate 7620
+Retrieved runtime info
+Powered off
+[root@mumesx2:~] vim-cmd vmsvc/power.on 7620
+Powering on VM:
+[root@mumesx2:~] vim-cmd vmsvc/power.getstate 7620
+Retrieved runtime info
+Powered on
+
+119] Reality password - D0ubleNeg@tive$
+
+120] zoom encryption decryption
+There are multiple ways which could be affecting zoom encryption issue
+
+The user you're messaging has to be online at the same time as you to encrypt the messages.
+
+For the users to whom you are unable to see the chats, please ask them to update to latest version of zoom and check.
+and for the group chats which you have mentioned please check on another device(if you have logged in) if those messages are decrypted or not.
+
+You can also try to log into the website, zoom.us, with your account and there should be a setting to "Sign out of all devices"
+as having the account signed into multiple places can confuse it as well.
+
+Log into zoom.us via browser
+Click the Profile menu on the top left > scroll down to 'Linked accounts' then click 'sign me out from all devices'.
+Then sign in on the laptop and check if messages are still encrypted .
+
+You can also install/update to the latest version of the zoom.
+
+Thanks!!
+echo
+121] VPN QR code on dneg mail
+vpnQRcode -u vbeg -s lonopenvpn2 -m -t vbeg@dneg.com
+
+122] uninstall chrome
+yum erase google-chrome.x86_64
+
+123] Delete temp files
+sudo rm -rvf /user_data/.tmp/publish_temp*
+sudo rm -rvf /user_data/.tmp/environment_*
+sudo rm -rvf /user_data/.tmp/tasklauncher_temp_*
+sudo rm -rvf /user_data/.tmp/tmp*
+sudo rm -rvf /user_data/.tmp/ogs*
+sudo rm -rvf /user_data/.tmp/Nuke/ViewerCache
+sudo rm -rvf /user_data/.tmp/Nuke/tilecache
+sudo rm -rvf /user_data/.tmp/clip/cache/*
+sudo rm -rvf /user_data/.tmp/hfs*
+sudo rm -rvf /user_data/.tmp/*.tmp
+sudo rm -rvf /user_data/.tmp/MoTemp/*
+
+find . -name '*.tex' | xargs rm
+
+124] nomachine issue command
+There had been some development made for the nomachine access due to the issues been observed in last few weeks.
+
+Can you please open the nomachine application and add a new connection with the hostname set as 'nomachine' and then connect.
+
+Thanks!
+
+125] \\dist\dist\Windows_Apps\nvidia-drivers\472.98-quadro-rtx-desktop-notebook-win10-win11-64bit-international-whql.exe
+
+This should work.
+
+
+Please try only the default version as we are maintaining version all around.
+
+If in doubt, run --> salt-call state.sls windows-desktop/nvidia-driver/install -l debug and see which one it's installing. It should install the version which is deployed by default.
+
+
+126] Google drive ownership transfer.
+
+Transfer ownership/files steps:
+Google Admin > Apps > Drive and Docs > Transfer ownership > From user: fiss@dneg.com, To userL mcsi@dneg.com > Transfer Files
+
+
+127] dist other site
+
+/hosts/dist.mtl.dneg.com/dist
+
+Micro edge webview2 runtime
+
+128] Mush 3D license key
+GB53f87207-5897-466f-789a-gyid445b78f8
+
+"C:\Program Files\Capturing Reality\RealityCapture\RealityCapture.exe" -activate 3E05B2F46A44FE6999F8BF870572DAA2AD65240E143BB4D0AC924D60AC4FEE64
+
+
+129] Strwaberry access
+Steps followed if the user is having a access for strawberry client app.1) Check from which location user is trying to access the strawberry application, in this case it was mtl location. 2) I have just gone to http://mtlstrawberry1/admin.html#users 3) Clicked on managed users4) Search for the user name 5) click on check box and click on Edit roles.6) Check if user is having (Can login to client application) access.7) If not then check on the box and provide the access. Thanks Thomas Davies for your suggestion and help on the Ticket.
+
+Here is the 24x5 rota for CST team http://dnet.dneg.com/display/TECH/Global+Tech+Schedules#GlobalTechSchedules-CentralSupportRota
+
+130] Endpoint otp
+https://epp1/index.php/
+
+131] http://jira/browse/TECH-901376 for clearing c drive space through commands
+
+132] mari 4.8
+ vendor-vanilla mari 4.8v3
+
+
+133] Zoom encyption issue
+Please try the following:
+
+Close Zoom completely.
+In Finder, click on 'Go" > Go to Folders and enter in the path:
+/Users/<your username>/Library/Application Support/zoom.us
+Renamed the data folder to data.bak.
+Open zoom.
+
+Let me know if that works.
+
+for thin client zoom.
+akbp@mumthin45:~/.zoom/data$ ll
+
+
+
+H4P=DNPQaQFG5uC
+
+D2Q5T=UrE*EJ7uG
+
+134] Modo
+Windows1. Start Modo and drop the ModoOzoneExporter.lpk file in the viewport.2. Select Yes to restart Modo.Windows (Non Modo default kit folder)1. If you are using a non Modo standard kit path you can create a folder ModoOzoneExporter under your Modo kit path.2. Rename the ModoOzoneExporter.lpk file to ModoOzoneExporter.zip.3. Extract the contents of the  ModoOzoneExporter.zip to the  ModoOzoneExporter folder.4. Start Modo.License Registration:1. When you start Modo after the kit has been installed and initate an Ozone export, Modo will present a message box asking if you will like to add a license.2. If you choose to add a license, the DEX License Form will appear in a browser. Make sure that there is a machine id present in the machine id field in the form. If not then let us know3. Enter the email and license prepared for you by the Ozone team.4. Click Register!5. If the registration was successful, then you should see that your machine has been added to the license.
+
+
+135] vpn for linux
+Currently VPN setup supports Mac and Windows only, however you can install openvpn client, follow this link https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-linux/
+
+Please follow below steps on your linux machine :
+Download & Install Openvpn client,
+You can extract configuration file from OSX-Installer.zip in VPN folder on google drive.
+Copy all contents from folder OSX-Installer/Preconfigure/Connections-Overwrite/1/ to /etc/openvpn/client/
+Rename config.conf to client.ovpn,mv config.conf client.ovpn
+Then cd /etc/openvpn/client and run this command "sudo openvpn --config client.ovpn"
+ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+
+PCOIP Download :- https://docs.teradici.com/find/product/software-and-mobile-clients/2022.01/software-client-for-linux
+
+Permalink Edit Delete
+
+136] makemkv app key
+M-modTPtgwgM8M9q500gAfxmsiejhkUcjYVsVAVnxbN1C5InbHChHGEkxZC0ibu6Dhg@
+
+137] mtlcm1 smb mac
+From your mac please follow below steps and check.
+
+1] Click the Go menu up in the top left corner of the screen.
+
+2] Select Connect to Server or use the keyboard shortcut command + k.
+
+3] To connect to your Group Drive: Type in Server Address: smb://mtlcm1
+
+4] Click Connect.
+
+5] Enter in your credentials.
+
+6] Click OK.
+
+7] This will add a network storage icon on your desktop.
+
+Let us know how it goes.
+
+Thanks!!
+
+138] New stereo show folder creation steps:STEREO Show folder set-up:• Stereo show codes are ALWAYS lowercase• Creation script is in TECH/stereo git repo, can clone this if you want• Must be run from root@mtlstereobatch1• on mtlstereobatch1, the git repo is already cloned in /user_data/git/stereo• Ex:  ∘ ssh mtlstereobatch1  ∘ cd /user_data/git/stereo/scripts/  ∘ sudo ./stereo-show-create <SERVER> <showcode>ex: sudo ./stereo-show-create mtlnfs14 joy• Remember to git pull before hand• Stereo servers = mtlnfs14 or mtlisilon1 (Ask in the ticket which one they want)• Double check that the folder was created by;  ∘ cd /hosts/<SERVER>/user_data/STEREO/  ∘ ls -lah  Ref: http://jira/browse/TECH-921392
+
+139] hike/ui/london/production/services
+lonsdiproxy1
+for van and mum it is proxy2
+
+140] Visual Studio 2019 installation.
+salt-call state.sls windows-desktop/microsoft-visual-studio/2019/init -l debug
+
+141] Ref ticket: http://jira/browse/TECH-811240
+
+From vcenter, turn off vm> edit settings > for hard disk 1, change the size Eg: 250 GB
+
+Note: in mtl we've been setting windows vms to 1000gb for both the main and user_data drives. make sure to change the size of the existing drive, dont delete and remake the drive because they'll lose their data!
+
+-once thats done ,boot the vm and login. install easeus partition manager:
+/dist/dist/epm.exe
+
+-run partition manager. ignore popup out 'new disk guide'. now there's an unallocated partition under 'disk 0', but it's next to 'recovery'. we need to move it so it's adjacent to the partition we want to expand (c). right click the recovery partition > resize/move > set available after to 0 mb and then click ok and execute the operation from the top left.
+now you can expand c partition, right click 'c' > resize/move > set the allocated to 250 GB and click ok and then execute the operation.
+
+Now to go file manager c drive and you will see the size increase.
+
+cudnn_8_0_4
+
+
+
+
+lease 10.21.56.74 {
+  starts 3 2022/12/07 07:59:33;
+  ends 3 2022/12/07 19:59:33;
+  tstp 3 2022/12/07 19:59:33;
+  cltt 3 2022/12/07 07:59:33;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet e4:54:e8:93:9b:ff;
+  uid "\001\344T\350\223\233\377";
+  set vendor-string = "MSFT 5.0";
+  set ddns-fwd-name = "lonws203.dhcp.dneg.com";
+  set ddns-txt = "317884038cf7695be0c7b25a37bf40b5a3";
+  set ddns-rev-name = "74.56.21.10.in-addr.arpa.";
+  client-hostname "lonws203";
+
+
+142] Ran depmod command restarted the firewalld service. And I rebooted the VM
+
+143] openvpn for linux.
+Currently VPN setup supports Mac and Windows only, however you can install openvpn client, follow this link https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-linux/
+Please follow below steps on your linux machine :
+Download & Install Openvpn client,
+You can extract configuration file from OSX-Installer.zip in VPN folder on google drive.
+Copy all contents from folder OSX-Installer/Preconfigure/Connections-Overwrite/1/ to /etc/openvpn/client/
+Rename config.conf to client.ovpn,mv config.conf client.ovpn
+Then cd /etc/openvpn/client and run this command "sudo openvpn --config client.ovpn"
+ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+
+144] install any app on ubuntu thincliet
+sudo dpkg -i appname
+
+145] Hi Adrian,
+Please only use support@dneg.com to submit your request. We will be more
+than happy to assist you.
+
+The other email : tech@dneg.com is for internal communication only between all sites.
+
+Thanks
+
+146] dnvpn2zimbra --user hpen --client thinclient --server mtlopenvpn1
+
+147] zrolic1 -/var/flexlm
+
+148] toonboom
+notes               http://toonboom.com
+password            dn3gP41ntm3
+username            tech-mtl@dneg.com
+
+1] Email ID : tech@dneg.com
+2] CLM version - 1.8.1000.6
+3] REG360 version -
+4] Is the license activated successfully? Ans - Yes it showed successfully activated.
+5] Device name? Ans - Lonws27
+6] What error is popping up on reg360 when trying to use it? Ans - I have attached a screenshot of an error.
+
+That  PC is not having an internet connection. You can contact me on +91 7499910245
+
+
+148] For zoom support ticket please mail on support@zoomus.zendesk.com
+
+149] find / -size +300M
+
+150] Shared drive with clients.
+Please confirm if you meet the following requirements so that we can proceed further with this.
+
+Client authorization and approval that Drive can be used as a data repository and collaboration platform is required before creating the shared Drive. This can either be a contractual line item or can be authorized by a FTE (client/third-party) or sufficient seniority who has authority to grant permission.
+A valid signed NDA is in effect between the company and the client/third-party.
+Client domains must be provided so that they can whitelisted as any other domains are restricted.
+How much long share drive will need
+No shared drives will be provisioned, nor access provided until a valid NDA and client authorization and approval have been demonstrated.
+Only Data IO must transfer data uploaded to Shared Drives onto the Production and Corporate networks. Established Data IO data integrity checking processes will assist in mitigating the risks associated with malware propagation, copyright infringement and the download of unauthorized software.
+No data should ever be downloaded from shared drives to personally owned laptops, desktops and mobile devices, etc.
+
+
+Following is the link for your reference:
+
+(Pt 5.2) http://dnet.dneg.com/pages/viewpage.action?pageId=585740657
+Thanks
+
+
+
+
+
+/etc/sensu/plugins/dneg/check_apt.sh
+
+151] Anuadu@765
+
+152] C drive space increase
+
+On mtlvcenter2, selected vanws1387 > Edit Settings... > Hard disk 1 set to 500 GB > OK
+
+On vanws1387:
+Delete Windows recovery partition
+Open command prompt as administrator
+diskpart
+list disk
+select disk 0 (0 should be the OS drive with recovery partition)
+list partition
+select partition 3 (3 should be the recovery partition)
+deelte partition override
+exit/close
+
+In disk management, expand C drive.
+
+
+apt-get install linux-generic linux-headers-generic linux-image-generic
+
+
+apt-get upgrade
+
+apt autoremove
+
+CackJow8
+piduXo7Po
+
+
+153] Mac library repair
+admin se login kar ke usko zoom meeting ka code dene ka
+uske baad root login kar ke cd /Users/
+chown -R userid:staff userid
+phir restart
+
+
+154] https://xmdsource.com/
+
+155] command for rdesktop using your login
+rdesktop -u rsuk -d ad.dneg.com -g 1000x700 lonws340
+
+156] command to create shortcut on desktop.
+ln -sv /u/juhu/review_anim ~/u/juhu/Desktop/
+
+157] zoom down
+https://downdetector.co.uk/status/zoom/
+
+158} python pip
+python pip.exe install pyside2
+
+159] zoom recornding path
+mtlnfs9:/user_data/TECH/Training/Zoom
+
+160] BG Renderer Max
+EBBR2*DNEG*TECH*190451383221823SUL1
+EBBR2*DNEG*TECH*475304318221833SUL1
+EBBR2*DNEG*TECH*380451383221833SUL1
+EBBR2*DNEG*TECH*155304318221783SUL1
+EBBR2*DNEG*TECH*160451383221793SUL1
+EBBR2*DNEG*TECH*410451383221773SUL1
+EBBR2*DNEG*TECH*160451383221793SUL1
+EBBR2*DNEG*TECH*430451383221793SUL1

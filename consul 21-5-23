@@ -1,0 +1,39 @@
+http://jira/browse/TECH-1041516
+
+mtlconsul2 went down
+open chrome
+http://mtlweb1:9011/
+supervisor consul
+
+Lock acquisition failed: failed to create session: Unexpected response code: 500 (No cluster leader)
+Lock acquisition failed: failed to create session: Unexpected response code: 500 (No cluster leader)
+Lock acquisition failed: failed to create session: Unexpected response code: 500 (No cluster leader)
+Lock acquisition failed: failed to create session: Unexpected response code: 500 (No cluster leader)
+
+
+
+
+http://jira/browse/TECH-1041520
+
+mtlweb1 came to fatal state
+
+all last):
+  File "/tools/SITE/scripts/libexec/dnredirect.py", line 18, in <module>
+    handler = SocketServer.TCPServer(("", PORT), myHandler)
+  File "/usr/lib64/python2.7/SocketServer.py", line 419, in __init__
+    self.server_bind()
+  File "/usr/lib64/python2.7/SocketServer.py", line 430, in server_bind
+    self.socket.bind(self.server_address)
+  File "/usr/lib64/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "/tools/SITE/scripts/libexec/dnredirect.py", line 18, in <module>
+    handler = SocketServer.TCPServer(("", PORT), myHandler)
+  File "/usr/lib64/python2.7/SocketServer.py", line 419, in __init__
+    self.server_bind()
+  File "/usr/lib64/python2.7/SocketServer.py", line 430, in server_bind
+    self.socket.bind(self.server_address)
+  File "/usr/lib64/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use

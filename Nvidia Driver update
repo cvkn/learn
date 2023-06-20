@@ -1,0 +1,43 @@
+Look Up Current Version Installed on Workstation
+nvidia-driver --report
+
+Example of Output:
+
+Graphics card       : Quadro 4000
+
+PCI device ID       : 10de:06dd
+
+Running version     : 375.66
+
+Installed version   : 375.66
+
+Wanted version      : 390.87
+
+Legacy card         : yes
+
+Grid card           : no
+
+Non-RPM driver      : no
+
+Hardware            : physical
+
+Three version should be same as the wanted or updated version
+
+Find which packages are installed:
+
+rpm -qa | grep nvidia*
+
+Example of Output:
+
+nvidia-x11-drv-375.66-84.dneg.x86_64
+
+nvidia-x11-drv-32bit-375.66-84.dneg.x86_64
+
+Remove Previous Version
+sudo yum remove -y nvidia-x11-drv
+
+Install Current DNeg Version
+
+sudo nvidia-driver --auto
+
+then reboot

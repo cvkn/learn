@@ -1,0 +1,51 @@
+
+
+to update the aliases or any configuration file in the systems we use git/stash
+
+we have to pull the repositary from stash site
+
+for first time setup we need to copy the ssh key to the user in stash web-application
+
+#vim ~/.ssh/cvkr_dneg.pub copy the text in this file 
+
+copy the ssh-rsa key and paste it in the stash website
+
+by using the command also you can copy the text in that file #xclip -selection clipboard < ~/.ssh/id_rsa.pub
+
+website route was --> chrome--> stash/ --> login --> settings --> users --> cvkr --> SSHKEYS tab -->  add keys --> paste the text copied from /.ssh/cvkr_dneg.pub
+
+then we are ready to use the bitbucket
+
+next 
+
+make a dir with name git in user homedir
+
+#mkdir ~/git
+
+#cd ~/git
+
+#git clone <repo link in ssh format> 	 Ex: git clone ssh://git@stash/tech/site-tech.git
+
+it will create cloned repo in you git dir
+
+#git pull		to download the latest repositaries from git
+
+make changes whichever necessary 
+
+#git diff		to view and confirm the changes we made in the files or repo's
+
+#git push		to upload the data to the servers to intigrate them in git
+
+
+
+cd git
+cd google
+git pull
+git checkout master
+git pull
+git checkout -b hotfix/Adding_users_google_exclude_delete
+git branch
+vi exclude-users.json
+git diff
+git commit -m "Added aush@dneg.com and cris@dneg.com into exclude-users.json - TECH-1001625" .
+stash-review

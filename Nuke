@@ -1,0 +1,27 @@
+
+Nuke launching error
+
+Can you please try to open in different machines, And also check with other show and shot
+If you can launch the shows or shots
+
+Thanks
+Venkat
+
+rename the .nuke file in the user directory
+####################################
+
+maya app crashing
+
+need to reset the maya prefs
+Ask confirm with the user to save all the data and exit from the machine and close the maya app
+
+# ssh root@machinename
+
+# cd u/username/maya/2020/
+
+# mv prefs prefs.bkp
+
+preferences will be erased and new preferences will be applied
+
+# cd /u/userid 
+#

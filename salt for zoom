@@ -1,0 +1,34 @@
+apt cache policy zoom
+    2  apt
+    3  apt-cache policy zoom
+    4  apt remove zoom
+    5  sudo salt-call state.highstate
+    6  kill -9 7187
+    7  sudo salt-call state.highstate
+    8  cd /var/cache/salt/
+    9  ls
+   10  rm -rf minion/
+   11  sudo salt-call state.highstate
+   12  cd
+   13  cd /var/cache/
+   14  ls
+   15  cd salt/
+   16  ls
+   17  sudo salt-call state.highstate
+   18  cd ..
+   19  rm -rf salt/
+   20  sudo salt-call state.highstate
+   21  ls
+   22  sudo salt-call saltutil.sync_all - | info
+   23  sudo salt-call saltutil.sync_all  | info
+   24  sudo salt-call saltutil.sync_all
+   25  sudo salt-call state.highstate
+   26  history
+
+
+
+lonws1301 /jobs/FUR/REF/london/production/recordings/Previs # ll
+total 0
+drwx------ 4 mosm user 48 May  4 15:16 Client
+drwx------ 4 mosm user 48 May  4 15:20 Internal
+

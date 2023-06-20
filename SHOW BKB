@@ -1,0 +1,172 @@
+lonbatch1 /root # dnBuildTools show BKB
+Reading '/tools/SITE/etc/tools.setup/show_default.setup'
+-- Building directories for '/tools/BKB'...
+Making dir /tools/BKB/bin
+Making dir /tools/BKB/bin/Linux64
+Making dir /tools/BKB/bin/MacOS
+Making dir /tools/BKB/data
+Making dir /tools/BKB/data/lights
+Making dir /tools/BKB/data/pipe
+Making dir /tools/BKB/dnb
+Making dir /tools/BKB/dnb/6.0
+Making dir /tools/BKB/dnb/6.0/fluidShaders
+Making dir /tools/BKB/dnb/6.0/fluidShaders/Linux64
+Making dir /tools/BKB/dnb/6.0/fluidShaders/MacOS
+Making dir /tools/BKB/dnb/6.0/lightShaders
+Making dir /tools/BKB/dnb/6.0/lightShaders/Linux64
+Making dir /tools/BKB/dnb/6.0/lightShaders/MacOS
+Making dir /tools/BKB/dnb/6.0/voxelShaders
+Making dir /tools/BKB/dnb/6.0/voxelShaders/Linux64
+Making dir /tools/BKB/dnb/6.0/voxelShaders/MacOS
+Making dir /tools/BKB/dnb/6.0/particleShaders
+Making dir /tools/BKB/dnb/6.0/particleShaders/Linux64
+Making dir /tools/BKB/dnb/6.0/particleShaders/MacOS
+Making dir /tools/BKB/doc
+Making dir /tools/BKB/include
+Making dir /tools/BKB/include/dnb
+Making dir /tools/BKB/lib
+Making dir /tools/BKB/lib/Linux64
+Making dir /tools/BKB/lib/MacOS
+Making dir /tools/BKB/etc
+Making dir /tools/BKB/etc/tools.setup
+Making dir /tools/BKB/houdini
+Making dir /tools/BKB/houdini/12.5
+Making dir /tools/BKB/houdini/13.0
+Making dir /tools/BKB/houdini/12.5/Linux64
+Making dir /tools/BKB/houdini/12.5/MacOS
+Making dir /tools/BKB/houdini/13.0/Linux64
+Making dir /tools/BKB/houdini/13.0/MacOS
+Making dir /tools/BKB/houdini/12.5/bin
+Making dir /tools/BKB/houdini/13.0/bin
+Making dir /tools/BKB/houdini/12.5/config
+Making dir /tools/BKB/houdini/13.0/config
+Making dir /tools/BKB/houdini/12.5/otls
+Making dir /tools/BKB/houdini/13.0/otls
+Making dir /tools/BKB/houdini/12.5/toolbar
+Making dir /tools/BKB/houdini/13.0/toolbar
+Making dir /tools/BKB/houdini/12.5/scripts
+Making dir /tools/BKB/houdini/13.0/scripts
+Making dir /tools/BKB/houdini/12.5/scripts/python
+Making dir /tools/BKB/houdini/13.0/scripts/python
+Making dir /tools/BKB/houdini/12.5/scripts/python/version
+Making dir /tools/BKB/houdini/13.0/scripts/python/version
+Making dir /tools/BKB/man
+Making dir /tools/BKB/maya
+Making dir /tools/BKB/maya/2012
+Making dir /tools/BKB/maya/2014
+Making dir /tools/BKB/maya/2012/mel
+Making dir /tools/BKB/maya/2014/mel
+Making dir /tools/BKB/maya/2012/icons
+Making dir /tools/BKB/maya/2014/icons
+Making dir /tools/BKB/maya/2012/shelves
+Making dir /tools/BKB/maya/2014/shelves
+Making dir /tools/BKB/maya/2012/plugins
+Making dir /tools/BKB/maya/2014/plugins
+Making dir /tools/BKB/maya/2012/plugins/Linux64
+Making dir /tools/BKB/maya/2012/plugins/MacOS
+Making dir /tools/BKB/maya/2014/plugins/Linux64
+Making dir /tools/BKB/maya/2014/plugins/MacOS
+Making dir /tools/BKB/maya/2012/plugins/python
+Making dir /tools/BKB/maya/2014/plugins/python
+Making dir /tools/BKB/maya/icons
+Making dir /tools/BKB/maya/mel
+Making dir /tools/BKB/maya/rig/mel
+Making dir /tools/BKB/maya/rig/python
+Making dir /tools/BKB/maya/rig/2012/python
+Making dir /tools/BKB/maya/rig/2014/python
+Making dir /tools/BKB/maya/rig/2012/plugins/python
+Making dir /tools/BKB/maya/rig/2014/plugins/python
+Making dir /tools/BKB/maya/rig/2012/plugins/Linux64
+Making dir /tools/BKB/maya/rig/2012/plugins/MacOS
+Making dir /tools/BKB/maya/rig/2014/plugins/Linux64
+Making dir /tools/BKB/maya/rig/2014/plugins/MacOS
+Making dir /tools/BKB/nuke
+Making dir /tools/BKB/nuke/9.0
+Making dir /tools/BKB/nuke/9.0/gizmos
+Making dir /tools/BKB/nuke/9.0/icons
+Making dir /tools/BKB/nuke/9.0/plugins
+Making dir /tools/BKB/nuke/9.0/plugins/Linux64
+Making dir /tools/BKB/nuke/9.0/plugins/MacOS
+Making dir /tools/BKB/nuke/9.0/python
+Making dir /tools/BKB/nuke/9.0/scripts
+Making dir /tools/BKB/nuke-custom
+Making dir /tools/BKB/nuke-custom/common
+Making dir /tools/BKB/nuke-custom/common/lib
+Making dir /tools/BKB/nuke-custom/common/lib/python
+Making dir /tools/BKB/nuke-custom/common/lib/python/dnnuke
+Making dir /tools/BKB/nuke-custom/common/lib/python/dnnuke/core
+Making dir /tools/BKB/nuke-custom/common/lib/python/dnnuke/nodes
+Making dir /tools/BKB/prman
+Making dir /tools/BKB/prman/18.0
+Making dir /tools/BKB/prman/18.0/dso
+Making dir /tools/BKB/prman/18.0/dso/Linux64
+Making dir /tools/BKB/prman/18.0/dso/MacOS
+Making dir /tools/BKB/prman/18.0/shader
+Making dir /tools/BKB/prman/18.0/shader/include
+Making dir /tools/BKB/prman/18.0/shader/slim
+Making dir /tools/BKB/prman/18.0/shader/slim/include -> prman/18.0/shader/include
+Making dir /tools/BKB/python
+Making dir /tools/BKB/python/Linux64
+Making dir /tools/BKB/python/MacOS
+Making dir /tools/BKB/scripts
+Making dir /tools/BKB/shake
+Making dir /tools/BKB/shake/4.10
+Making dir /tools/BKB/shake/4.21
+Making dir /tools/BKB/shake/4.10/clipboard
+Making dir /tools/BKB/shake/4.21/clipboard
+Making dir /tools/BKB/shake/4.10/fonts
+Making dir /tools/BKB/shake/4.21/fonts
+Making dir /tools/BKB/shake/4.10/icons
+Making dir /tools/BKB/shake/4.21/icons
+Making dir /tools/BKB/shake/4.10/icons/ux
+Making dir /tools/BKB/shake/4.21/icons/ux
+Making dir /tools/BKB/shake/4.10/macros
+Making dir /tools/BKB/shake/4.21/macros
+Making dir /tools/BKB/shake/4.10/macros/startup
+Making dir /tools/BKB/shake/4.21/macros/startup
+Making dir /tools/BKB/shake/4.10/macros/startup/ui
+Making dir /tools/BKB/shake/4.21/macros/startup/ui
+Making dir /tools/BKB/shake/4.10/plugins
+Making dir /tools/BKB/shake/4.21/plugins
+Making dir /tools/BKB/shake/4.10/plugins/Linux64
+Making dir /tools/BKB/shake/4.10/plugins/MacOS
+Making dir /tools/BKB/shake/4.21/plugins/Linux64
+Making dir /tools/BKB/shake/4.21/plugins/MacOS
+Making dir /tools/BKB/shake/4.10/plugins/Linux64/startup
+Making dir /tools/BKB/shake/4.10/plugins/MacOS/startup
+Making dir /tools/BKB/shake/4.21/plugins/Linux64/startup
+Making dir /tools/BKB/shake/4.21/plugins/MacOS/startup
+Making dir /tools/BKB/shake/4.10/plugins/Linux64/startup/ui
+Making dir /tools/BKB/shake/4.10/plugins/MacOS/startup/ui
+Making dir /tools/BKB/shake/4.21/plugins/Linux64/startup/ui
+Making dir /tools/BKB/shake/4.21/plugins/MacOS/startup/ui
+Making dir /tools/BKB/shake/4.10/scripts
+Making dir /tools/BKB/shake/4.21/scripts
+Executing 'shaketemplate ${SHOW}'
+installing: /tools/BKB/shake/4.10/macros/startup/ui/BKB_template.h
+installing: /tools/BKB/shake/4.21/macros/startup/ui/BKB_template.h
+Executing 'cp -p /tools/SITE/data/general.dat /tools/${SHOW}/data'
+Executing 'cp -p /tools/SITE/data/pipe/INTERNAL.svg /tools/${SHOW}/data/pipe'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/12.5/OPlibraries'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/13.0/OPlibraries'
+Done.
+
+
+Cloning into '/user_data/.tmp/jobssetup-BKB'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 21 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (21/21), 7.55 KiB | 0 bytes/s, done.
+Checking connectivity... done.
+INFO - No colour config available, needs manual setup, skipping
+Counting objects: 3, done.
+Delta compression using up to 16 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To ssh://stash/show/BKB-data.git
+   bafd301..719a1cd  master -> master
+INFO - Install MOB
+INFO - Finished setting up [BKB]
+

@@ -1,0 +1,1108 @@
+
+
+#######################################################################################################################################
+http://jira/browse/TECH-952012
+
+gmail verifying issue
+
+You need to clear the cookies & cache
+
+There is a easiest and quickest fix is to reset chrome. Please go to settings - advanced settings - reset and clean - and the select reset chrome to default.
+
+If you want to backup your bookmarks please follow the steps given below
+
+You can see the 3 dots, on right side upper cornet > click on that > go to Bookmark > bookmark manager  It will open net tab named as Bookmarks  .. On this tab you can see 3 Dots. Click on that > you will have a option to import bookmarks & export bookmarks   >  click on export > save on desired location..  Same way you can import the exported bookmarks
+
+Then reset the chrome.
+
+Let me know if that works for you
+
+
+
+Thanks
+
+
+#######################################################################################################################################
+
+http://jira/browse/TECH-947741 --> 	unable to login to the machine	(it's an physical machine powered off & it's in securedVlan)
+
+ping hostname
+
+if its not pinging we have to check wether it's virtual machine or physical machine by using the below command
+
+#whichsys <hostname> --site all
+
+we found that its a physical machine
+
+created a subtask for onsite team,
+
+they turned it on but unable to reach the machine cause it's in secure vlan network
+
+we can find the machine by checking it's ip address 10.21.30.53 if the subnet number contains 30 or 32 that machine is in secure vlan network
+
+if we want to reach the machine we should be in the same securevlan network
+
+#######################################################################################################################################
+
+http://jira/browse/TECH-948948 --> user unable to connect pcoip
+
+#uptime
+11:23:42 up 106 days,  4:00, 20 users,  load average: 0.11, 0.18, 0.31
+
+machine running since 106 days
+
+#sar -r
+
+memory usage was very high
+
+12:00:01 AM kbmemfree kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
+12:10:01 AM   3773440  61938092     94.26      4140   8552152  94393036    114.43  51331132   7573744         0
+12:20:01 AM   3773728  61937804     94.26      4140   8552180  94488148    114.55  51332068   7573740       304
+12:30:01 AM   3765528  61946004     94.27      4140   8552236  94393932    114.43  51339756   7573748       288
+12:40:01 AM   3788028  61923504     94.24      4140   8552276  94389740    114.43  51314896   7573752       536
+12:50:01 AM   3784484  61927048     94.24      4140   8552300  94489868    114.55  51317548   7573748       476
+01:00:01 AM   3764384  61947148     94.27      4140   8552336  94391436    114.43  51339696   7573748       420
+01:10:01 AM   3757120  61954412     94.28      4140   8552364  94391376    114.43  51347128   7573752       428
+01:20:01 AM   3751348  61960184     94.29      4140   8552384  94391408    114.43  51353540   7573752       444
+01:30:01 AM   3761748  61949784     94.28      4140   8552444  94395276    114.43  51340844   7573768       300
+01:40:01 AM   3769280  61942252     94.26      4140   8552472  94392444    114.43  51334848   7573768       356
+01:50:01 AM   3796072  61915460     94.22      4140   8552500  94392212    114.43  51308936   7573768       424
+02:00:01 AM   3656268  62055264     94.44      4140   8552632  94565480    114.64  51446232   7573696       496
+02:10:01 AM   3761176  61950356     94.28      4140   8552864  94437676    114.49  51342924   7573704       420
+02:20:01 AM   3755176  61956356     94.29      4140   8552888  94388376    114.43  51348828   7573704       496
+02:30:01 AM   3746288  61965244     94.30      4140   8552952  94392148    114.43  51357596   7573732       360
+02:40:01 AM   3737044  61974488     94.31      4140   8552992  94487052    114.55  51367900   7573736       304
+02:50:01 AM   3744104  61967428     94.30      4140   8553080  94388820    114.43  51360564   7573800       360
+03:00:01 AM   3729304  61982228     94.32      4140   8553116  94391332    114.43  51376456   7573796       412
+
+asked user to save all files and data then logout
+
+then reboot initiated
+
+in pre checks after reboot we found nvidia driver versions are different
+
+#nvidia-driver --report
+
+Graphics card       : GRID RTX8000-12Q
+PCI device ID       : 10de:1e30
+Running version     : 460.91.03
+Installed version   : 510.85.02
+Wanted version      : 510.85.02
+Legacy card         : no
+Grid card           : yes
+Non-RPM driver      : no
+Hardware            : vm
+ESX host version    : 510.85.03
+
+#sudo yum remove nvidia -y --> uninstalled nvidia drivers
+
+#sudo nvidia-driver --auto --> installed the desired version
+
+Graphics card       : GRID RTX8000-12Q
+PCI device ID       : 10de:1e30
+Running version     : 510.85.02
+Installed version   : 510.85.02
+Wanted version      : 510.85.02
+Legacy card         : no
+Grid card           : yes
+Non-RPM driver      : no
+Hardware            : vm
+ESX host version    : 510.85.03
+
+
+###############################################################################################################################
+
+# dnpasswd -i USER -> will give the details of the user password info
+
+If password is locked, use the below command.
+
+# dnpasswd -u USER
+
+Reset password, use the below command.
+
+# dnpasswd -r USER  --> to reset the password and it will display the password on tty
+
+send it to the user's personal email
+
+# passwd-email -u <USER> -m -p    -p = personal mail id
+
+Users can change the password using the below mentioned link ater 24 hours.
+
+http://intranet.zro.dneg.com/password/change
+
+if the users account was getting locked recursively
+
+we can trace the logs in the directory 	#cd /jobs/SITE/syslog/server
+										# grep nka londc*/2017-02-*-syslog.log | grep -i " locked out" | grep Computer --color
+										# less londc*.ad.dneg.com/2023-05-15-syslog.log | grep -i " jon " | grep AUDIT_FAILURE
+
+###############################################################################################################################
+
+http://jira/browse/TECH-952012
+
+gmail verifying issue
+
+need to clear the cache
+
+There is a easiest and quickest fix is to reset chrome. Please go to settings - advanced settings - reset and clean - and the select reset chrome to default.
+
+If you want to backup your bookmarks please follow the steps given below
+
+You can see the 3 dots, on right side upper cornet > click on that > go to Bookmark > bookmark manager  It will open net tab named as Bookmarks  .. On this tab you can see 3 Dots. Click on that > you will have a option to import bookmarks & export bookmarks   >  click on export > save on desired location..  Same way you can import the exported bookmarks
+
+Then reset the chrome.
+
+Let me know if that works for you
+
+
+
+Thanks
+
+Venkat
+
+################################################################################################################
+
+http://jira/browse/TECH-951900
+
+unable to power on the VM
+
+need to note down the vm name and rackid & vdi name
+
+then remove the VM from the inventory
+
+then open the Storage icon & open the storage site & same rack id and search for the machine name
+
+select the file with extension name  (machinename.vmx)
+
+select the file & press register VM
+
+if it is mounted and powered on fine
+
+or else we need to contact the machine location onsite tech team for assistence
+
+till then we can assign one temporary machine for the user through this page
+
+http://dnet.dneg.com/pages/viewpage.action?pageId=484387923
+
+need to check the machine specs and provide the best suitable machine for user
+
+###################################################################################################################
+########################################################################################################################
+http://jira/browse/TECH-958438 --> viscosity update error in windows 11
+
+windows machine viscosity connectivity error
+
+user was upgraded the viscosity app through the popup
+
+so he is facing the issue connection issue with VPN
+
+asked user to download the vpn files from drive again
+
+by providing the access to user for downloading the vpn files
+
+#/tools/SITE/etc/google/newstarteraccess --add --user <USER>
+
+after downloading of the files we need to revoke the permission for the user
+
+#/tools/SITE/etc/google/newstarteraccess --remove --user <USER>
+
+########################################################################################################################
+
+user was unable to pcoip in to his machine
+
+pcoip error
+
+checked with top comand
+top -h
+
+system CPU utilisation was very high 1200% approx
+
+machine resource was using for rendering in background
+
+we can find this by using nimby -i
+
+
+INFO: The following background tasks are currently active:
+
+jid owner projects Blade.name starttime progress argv
+======= ===== ======== ========== =========== ======== ============================================================
+6645880 cmca MEG2 crail 01/08|21:06 46.0 bob-world -d /builds/targets/...nerate_render_cache_location
+INFO: If you want to continue and kill them, we will ask you to create a JIRA support ticket to describe
+INFO: the effects you are feeling so that we can improve our automatic checks.
+Continue to kill these tasks? y/n: y
+INFO: Enabling NIMBY and rescheduling running tasks
+
+name port profile load availdisk availmem starttime nimby
+===== ==== ========================== ==== ========= ======== =========== ============
+crail 9005 workstation_cpus_12_mem_64 1.1 104.3 66.9 01/08|00:13 /local/crail nimbied
+jid tid user title state statetime Blade.name
+========== ==== ==== =================================== ====== =========== ==========
+ 6645880 487 cmca clarisse_render_1149-1149.1149-1149 active 01/08|21:06 crail retried
+
+we can release the machine by using
+
+#nimby  #nimby -a  #nimby -d
+
+it will release your system resources to normal state
+
+if it is not releasing and show no nimby processes are running
+
+then we need to kill the process by using kill -9
+
+for that use top command
+
+#top
+
+sort the process by user name (which user initiated the nimby process)
+
+#top (press "u") --> type the user name
+
+it will give the output of the processes running by the user
+
+we can kill the process by using
+
+#sudo kill -9 PID PID PID
+
+then resources will be released to use pcoip and the othe processes
+
+################################################################################################################
+
+http://jira/browse/TECH-949545 		Viscosity license for mac
+
+need to provide licence key for the user if its running on trail version
+
+Name 	: Double Negative
+Email	: (leave blank)
+Key		: VXDC-YD6Z6X-ZPBJWN-YAAUVY-QKIDAT-L4LF3I
+
+##########################################################################################################
+
+http://jira/browse/TECH-948764 		pcoip licence shortage
+
+need to check the floating licences are available or not
+
+for that need to use	#lic --pcoip
+for any software lic	#lic --<soft name>
+
+#######################################################################################################
+
+http://jira/browse/TECH-953318
+
+to provide vpnQRcode for the user
+
+you need to be in the techvlan network to run these command
+for mtl it is mtlws9006
+
+--> #vpnQRcode -u <USER> -s openvpn-master -m -p
+
+you will need to install the Google Authenticator app on you phone. Once you have downloaded the app you will need to scan the QR code from the app, which you will on your personal email.
+
+After you have scanned the QR code it will display 6 digit number which will be used as a two factor authentication while connecting to viscosity..
+
+While logging into viscosity after you have entered your credentials it will ask for authenticator code where you will enter this 6 digit code.
+
+###############################################################################################
+
+http://jira/browse/TECH-954463 --> adding user to group alias
+
+# sudo /tools/SITE/etc/google/groupsutil --user USER@dneg.com --group groupname
+
+# sudo /tools/SITE/etc/google/groupsutil --user ms@dneg.com --group dneg-nb-client@dneg.com --remove
+
+###########################################################################################
+
+http://jira/browse/TECH-999070 --> adding user to the group
+
+sudo /tools/SITE/etc/google/groupsutil --user USER@dneg.com --group groupname
+
+###############################################################################################
+
+
+#############################################################################################
+
+http://jira/browse/TECH-961997 -- bluetooth access for mac user to connect to bluetooth
+
+we need to provide the OTP to the user for connecting to bluetooth devices in macbook
+
+we need to connect to the nomachine of the desired site in my case it is remote lon  (machinename is lonmac257)
+
+#remote lon
+open the weblink https://epp1/index.php/
+2] https://epp1/index.php/
+3] click on Offline password
+4] offline Temporary password
+5] fill Details.
+Share OTP with user over zoom.
+
+Ref: http://jira/browse/TECH-898108
+
+##3###########################################################################################
+
+http://jira/browse/TECH-963657 --> need to check the alias is auto sync or not
+
+then only we can proceed to add remove the user
+
+for shotgun alias we should not make any changes, shotgun team will take care about it
+
+#mkdir ~/git
+
+#cd ~/git
+
+#git clone <repo link in ssh format> 	 Ex: git clone ssh://git@stash/<ssh addres of the directory>
+it will create cloned repo in you git dir
+
+#git pull		to download the latest repositaries from git
+
+make changes whichever necessary
+#cd /u/cvkr/git/site-etc-cfg-systems/common
+vim department_overrides.yaml
+
+#git diff		to view and confirm the changes we made in the files or repo's
+
+#git commit -m "changes description TECH-963657" to link to jira, (ticket num should be in the same format like --> TECH-963657)
+
+#git push		to upload the data to the servers to intigrate them in git
+
+###################################################################################################################
+
+http://jira/browse/TECH-964148 --> unable to launch zoom in machine, ran salt in the machine
+
+for linux # salt-call state.highstate
+for windows you need open command prompt as administrator
+			# cd salt
+			# .\salt-call.bat -l info state.highstate
+
+####################################################################################################################
+
+http://jira/browse/TECH-965897 re-install VPN in windows
+
+If you are using a windows machine
+
+please check the viscosity app version, 
+
+If it is not 1.8.5, please follow the below steps,
+
+You need to uninstall the viscosity app and re-install it from the DNEG google drive,
+
+1.Uninstall Viscosity:
+
+close the viscosity app and services by viscosity,
+
+press windows --> search for viscosity --> right click on viscosity --> uninstall --> will open the uninstaller window, double click on viscosity --> confirm for uninstallation,
+
+2.Install Viscosity:
+
+Open DNEG google drive,
+
+for this open gmail --> click on 9 dots at top right corner --> click on drive -->
+
+download the WIN_DNEG_VPN.exe and install it,
+
+(if your drive access denied contact us for drive access)
+
+ 
+
+3. VPN profile will preset in the viscosity app for you, click on the VPN profile,
+
+enter your user credentials & google authenticator password to connect to VPN,
+
+ 
+
+Then try to launch PCOIP, Please check if that works for you
+
+Thanks
+
+Venkat
+
+######################################################################################################################
+http://jira/browse/TECH-972330 --> Vpn authentication failed
+
+need to check VPN logs
+
+for that we need to be on a techvlan machine as root user
+
+mtlws9006 /root # cat /jobs/SITE/syslog/server/mtlopenvpn*/2023-02-06-syslog.log | grep -i "First or last name of the user"
+
+LDAP = wrong password
+OTP = wrong OTP
+
+# vpnQRcode -u <USER> -s lonopenvpn2 -m -t <mail id> send new QR code for OTP setup
+
+###############################################################################################################################
+
+http://jira/browse/TECH-975214 --> maya app crashing
+
+need to reset the maya prefs
+Ask confirm with the user to save all the data and exit from the machine and close the maya app
+
+# ssh root@machinename
+
+# cd u/username/maya/2020/
+
+# mv prefs prefs.bkp
+
+preferences will be erased and new preferences will be applied
+
+# cd /u/userid
+#
+
+#################################################################################################################
+#################################################################################################################
+http://jira/browse/TECH-978191 --> C-Drive is full need to expand C-Drive in windows
+
+Ref ticket: http://jira/browse/TECH-811240
+
+From vcenter, turn off vm> edit settings > for hard disk 1, change the size Eg: 250 GB
+
+Note: In mtl we've been setting windows vms to 1000gb for both the main and user_data drives. make sure to change the size of the existing drive, dont delete and remake the drive because they'll lose their data!
+
+-once thats done ,boot the vm and login. install easeus partition manager:
+/dist/dist/epm.exe
+
+-run partition manager. ignore popup out 'new disk guide'. now there's an unallocated partition under 'disk 0', but it's next to 'recovery'. we need to move it so it's adjacent to the partition we want to expand (c). right click the recovery partition > resize/move > set available after to 0 mb and then click ok and execute the operation from the top left.
+
+- now you can expand c partition, right click 'c' > resize/move > set the allocated to 250 GB and click ok and then execute the operation.
+
+Now to go file manager c drive and you will see the size increase.
+
+###################################################################################################################
+
+http://jira/browse/TECH-978280 --> new user asked access for office space
+http://jira/browse/TECH-980650 --> MIRO access for the user
+
+
+# sudo /tools/SITE/etc/google/groupsutil --user vhsu@dnneg.com --group dneg-sso-officespace@dneg.com
+# sudo /tools/SITE/etc/google/groupsutil --user smem@dneg.com --group dneg-sso-miro@dneg.com
+
+
+##########################################################################################################
+
+http://jira/browse/TECH-978876 --> 2FA without mobile
+
+There is one more way to do it,
+
+You can get a chrome extension for the google authenticator and screenshot the qr code through it so that you can get the code to log into the vpn. Let me know if you need a hand with it
+https://chrome.google.com/webstore/detail/authenticator/bhghoamapcdpbohphigoooaddinpkbai?hl=en
+
+Thanks
+#################################################################################################
+
+
+
+Mac admin details:Username: adminPassword: dorset106
+
+#############################################################################################
+
+http://jira/browse/TECH-986459 --> New show setup
+
+Log into lonbatch1 and become root
+
+# ssh lonbatch1
+# sudo su - (you must be logged in as root and root environment)
+
+1. show setup
+
+# dnBuildTools show P30RE
+
+Directories will get created for the show
+Reading '/tools/SITE/etc/tools.setup/show_default.setup'
+– Building directories for '/tools/P30RE'...
+
+Executing 'shaketemplate ${SHOW}'
+installing: /tools/P30RE/shake/4.10/macros/startup/ui/P30RE_template.h
+installing: /tools/P30RE/shake/4.21/macros/startup/ui/P30RE_template.h
+Executing 'cp -p /tools/SITE/data/general.dat /tools/${SHOW}/data'
+Executing 'cp -p /tools/SITE/data/pipe/INTERNAL.svg /tools/${SHOW}/data/pipe'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/12.5/OPlibraries'
+Executing 'echo './otls/*.otl' > /tools/${SHOW}/houdini/13.0/OPlibraries'
+Done.
+
+2.Job setup
+
+# jobssetup -j P30RE --div VFX --org DNEG
+
+Some errors will occur while executing this command we need to retry till it gives the desired output
+Ref:http://dnet.dneg.com/pages/viewpage.action?spaceKey=TECH&title=New+Show+Creation+Procedure
+
+Show setup was completed in london site
+
+3.Syncronize the created show to desired site
+
+
+Show setup was completed in london site
+but we need to sync the show to requied site also
+while running the jobsetup command we can create a PR for making changes in sitedata file
+
+# git branch --> it will show the default branch
+# git checkout master --> it will change the default to master branch
+	(we should only create branches from master)
+# git pull --> to refresh the repo
+# git checkout -b hotfix/Add_showname_in_Mum
+# cd showname
+# vim sitedata.yaml
+	(every show must be added in global shows)
+	(every show must be added in desired site)
+	(every show need to insert in show-secure & show-sync)
+	(every show must be added in alphabetical order only)
+	-->save the file after editing
+# git diff
+# git commmit -m "comment for adding show with ticket number" sitedata.yaml
+# stash-review --> it will generate a PR-URL copy it and ask for approval in CST thrugh the URL,
+					(it needs to approved by two people)
+	After approval it need to be mergerd with master file,(Ask in Tech global for PR Merge)
+
+4.need to wait till jenkins sync to be completed, (jenkin Url's available in DNET Page)
+
+5.cross check for confirmation with /jobs/showname --> directories should be there
+
+6.we need to sync the setup manually also for cross check
+
+# sync_util -j showname -s lon -d site
+
+7. Lastly we need to update the epic ticket for changing the status of all linked tickets
+
+# update-show-epic --unstall-ptsup-tickets <epicticket ID> it is available on ticket page,
+
+########################################################################
+http://jira/browse/TECH-985608
+
+For reference: http://jira/browse/TECH-682831
+
+Reset mac book password by keychain
+Followed this step
+cat the key from /tools/SITE/etc/cfg/systems/filevault/$macname and try to login with wrong password constantly till it prompt for recovery key then enter the presented recovery key into the login screen.  After that, open a Terminal, switch to root and run diskutil apfs updatepreboot /    Then Logout from that system.  Ask the user to login with their current AD password.  It'll prompt to update or reset the keychain.  It's better off resetting the keychain. Restart the system and see if the user can login now.
+
+##################################
+####################################
+http://jira/browse/TECH-990809 --> install houdini and assign licence server
+
+download houdini .exe to desktop on remote machine from \\dist\dist\sideFX folder
+run the exe file to install houdini,
+For licensing part select the third optiion as "i have paid for a licence, and use sideFX as lcense server"
+then press on file and change the license location to the server,
+then enter the server address as lonlic1 or zrolic1
+Then relaunch houdini,
+Done.
+
+http://dnet.dneg.com/display/TECH/Installing+Houdini+on+Windows+10
+
+###################################
+
+http://jira/browse/TECH-990914 --> pycharm in windows machine
+
+pycharm community edition was downoaded from the official site from internet nomahcine
+copied to the machine which app need to install,
+run the exe file it will install pycharm,
+Done,
+
+###################################
+http://jira/browse/TECH-1040523#
+For deactivate/ retire username
+
+ssh zrobatch1
+sudo su
+usersetup --retire -u <uname>
+##################################
+
+http://jira/browse/TECH-985722 --> figma for linuxttp://dnet.dneg.com/scripts/dnet-whoswho/
+
+figma linux version is not available to install
+we need to use the web version,
+we have web version licenses also.. 13 licences are there
+admin name was provided in the above ticket
+
+#################################
+
+http://jira/browse/TECH-989115 --> delegate access to the user
+
+we can take the DNEG-Animation-News password from dnvault
+##############################################################
+###############################################################
+http://jira/browse/TECH-994467 --> who'swho page photo update
+1. Take HR approval first
+http://dnet.dneg.com/display/TECH/Adding+Whos+who+pictures?searchId=2BRZ6VS3V
+Download the image to local /user_data directory
+rename it as per the whoswho naming convention --> h
+# ssh zrobatch1
+# sudo rsync -av chnws5245:/user_data/enrique.sanchez.perez.jpg /user_data/whoswho/
+
+# whoswho /user_data/whoswho/enrique.sanchez.perez.jpg enrique.sanchez.perez
+
+it will reflect in dnet page
+
+###################################
+
+http://jira/browse/TECH-996640 --> Perforce install in windows machine
+
+remote to the windows machine
+\\dist\dist\Windows_apps/perforce/
+copy the file to desktop
+execute the .exe file
+enter the username when it prompts to enter (machine owner userid or your userid)
+
+Done
+#####################################
+--> injstall mari & Fusion
+remote to the windows machine
+\\dist\dist\Windows_apps/
+copy the file to desktop, execute the .exe file
+After that press windows search for envi
+clickon environmental variables
+creat new variables
+
+FOR MARI
+
+foundry_LICENSE = 4101@stereo-foundry-license
+
+
+FOR FUSION
+
+EYEON_LICENSE_FILE = 27000@fusion-license
+
+FUSION_LICENSE_SERVER = fusion-license
+
+#########################################
+http://jira/browse/TECH-998717 --> Taskbar disseappered
+
+I've ran salt in your machine,
+and checked that it appearing,
+If it is not appearing, please try the below command
+"mate-panel --replace", and it might bring the taskbar back
+
+Thanks
+Venkat
+################################
+
+################################
+#################################
+http://jira/browse/TECH-997519 -- Nuke launching issue
+we need to take confirmation from user as below
+Can you please try to open in different machines, And also check with other show and shot
+If you can launch the shows or shots
+
+Thanks
+Venkat
+
+if user can able to launch the shot in other machine you need to reset the nuke preferences
+
+rename the .nuke file in the user directory
+################################
+http://jira/browse/TECH-999308 --> installing mari and UnrealEngine5
+as usual process of installing a software and for licensing
+we need to create a ENV variable in the environmental variables,
+
+remote to the windows machine
+\\dist\dist\Windows_apps/
+copy the file to desktop, execute the .exe file
+After that press windows search for envi
+clickon environmental variables
+creat new variables
+
+FOR MARI
+
+foundry_LICENSE = 4101@stereo-foundry-license
+
+UE5 install
+
+\\dist\dist\Windows_Apps\unrealengine-win-updater
+install setup.exe and unreal updater, open it through the installer in bottom right corner in task bar,
+press on it and select the updater and select the desired version,
+it will install it automatically,
+
+Done
+####################################
+http://jira/browse/TECH-999197 -- unable to launch internet nomachine
+user user diskquota was exceeded >2GB
+deleted files from those user home directories in internet and remote machine as well
+And it worked
+######################################
+http://jira/browse/TECH-999406 --> shared drive access to the user
+need to login with the tech-drive-mgmt mail credentials
+serch for the name in shared drives, add the user and position as content manager,
+and done
+########################################
+
+http://jira/browse/TECH-1001625 --> email account creation without workday id
+need to take confirmation from the Coral gibson and HR-lon
+
+As per ticket "TECH-1001625", we have created DNEG email accounts for Annushka Scruton as "aush@dneg.com" and Christine Ivall as "cris@dneg.com".
+
+we need to update it in the /git/google/exclude-users.json under exclude_from_delete
+
+cd git
+cd google
+git pull
+git checkout master
+git pull
+git checkout -b hotfix/Adding_users_google_exclude_delete
+git branch
+vi exclude-users.json
+git diff
+git commit -m "Added aush@dneg.com and cris@dneg.com into exclude-users.json - TECH-1001625" .
+stash-review
+
+Following are the details:
+
+Annushka Scruton
+Username: aush@dneg.com
+Password: 6h=&*=39TE=G5mV&
+
+Christine Ivall
+Username: cris@dneg.com
+Password: qTMR6UHMD9MJ4eL*
+
+Please check and confirm from your end,
+
+Thanks.
+
+We have created DNEG email accounts for Annushka Scruton as "aush@dneg.com" and Christine Ivall as "cris@dneg.com".
+I have shared thoir passwords with DNEG HR London. They will share it with on  Annushka's and Christine's personal ID.
+
+Thanks.
+
+At last we need to add them to freelancerOU group
+
+##################################
+http://jira/browse/TECH-1000065 -- VPN for Linux
+
+As said currently VPN setup supports Mac and Windows only.
+
+And having issues with openvpn for install
+
+However you can install openvpn client, follow this link
+https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-linux/
+
+Please follow below steps on your Linux machine:
+
+Download & Install Openvpn client,
+You can extract configuration file from OSX-Installer.zip in VPN folder on google drive.
+Copy all contents from folder OSX-Installer/Preconfigure/Connections-Overwrite/1/ to /etc/openvpn/client/
+Rename config.conf to client.ovpn
+mv config.conf client.ovpn
+Then cd /etc/openvpn/client
+and run this command:
+sudo openvpn --config client.ovpn
+ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+Thanks,
+
+###############################
+http://jira/browse/TECH-1003773 & http://jira/browse/IMS-38352 Display Name change
+
+1) Since the name gets synced from Workday, an initial request needs to be raised with hr-lon for name change in the Workday.
+
+2) As we have switched now over to Zoom SSO all the data will be fetched from IMS. To change your name in zoom you will need to create a ticket with IMS team emailing to imssupport@dneg.com to update your name in the GED database.
+
+3) Lastly, the VPN certificates need to be revoked and once the changes are reflected, a new QR code will be provided to you from us.
+
+
+We can do this for you, just wanted to make you aware that with this process, we will also need to delete your VPN certificate and reinstate it which does take some time to sync.
+
+Who ever picks this up, please complete the whole process and check with Tom when is good for him, as he could potentially be locked out of his VPN for an hour or so.
+Change name in GED, update systems file for all their machine assignments to the new name. Delete the VPN certificate, delete QR code. Create new certificate with new name and send new QR code and new viscosity download. It looks like Tom has a dneg macbook assigned, so he will need support to delete the old vicosity connection and add the new one (it will require admin passwords, and possible access to google drive if he isn't a super user)
+
+Thanks
+
+#################################
+Command to check free workstations:
+
+# sysassignchk -f
+###################################
+1) Login to techVlan machine of the site, and launch chrome
+#ssh TechVlan -X
+#ssh root@TechVlanmaster server
+Run the revoke command:
+
+root@lonopenvpn2:~# /etc/openvpn/revoke_user vlfi
+Using configuration from /etc/openvpn/easy-rsa/openssl.cnf
+Revoking Certificate 07B9.
+Data Base Updated
+Using configuration from /etc/openvpn/easy-rsa/openssl.cnf
+C = UK, ST = London, L = London, O = Double Negative, OU = prod, CN = Vanessa Louise Finn, emailAddress = vlfi@dneg.com
+error 23 at 0 depth lookup: certificate revoked
+error 07B9.pem: verification failed
+
+lonws158 /u/aast # vpnutil --user vlfi --revoke
+vlfi has a active VPN, revoking QR code
+
+
+#lonws1301 /u/cvkr #chrome
+Go to http://lonopenvpn2/openvpn/index.php?Action=NewCertificate and search for her name under certificates.
+Create new cretificate to the user with same credentials,
+
+Then run #root@lonopenvpn2:~#/etc/openvpn/setup_otp <username>
+
+vpnQRcode -u <username> -s lonopenvpn2 -m -t <mail id> 	--> Send via email to a specific email address
+
+$ /tools/SITE/etc/bin/dnvpn2google -u <username> -s lonopenvpn2
+$ /tools/SITE/etc/bin/dnvpn2google -u USER -s lonopenvpn2 -c thinclient
+
+##################################
+
+http://jira/browse/TECH-1015752 python 3.10 install
+
+Downloaded the Python3.10.exe file from internet to the local machine,
+installed python3.10
+you can find the path and open it, C:\Program Files\Python310\Scripts
+open terminal as admin and run the below scripts to install the required modules
+PS C:\Program Files\Python310\Scripts> python pip.exe install <module name>
+It will be installed and module path will display over there
+
+Thanks
+Venkat
+
+###################################
+http://jira/browse/TECH-1016705 --> marvelous designer install
+
+//dist/dist/win/marvelousdesigner
+When you launch Hasp key not found error will appear
+Problem
+H0007 - Sentinel HASP key not found
+open the below sites
+1. On the Windows box where the installation is happening, open a web browser and go here: http://localhost:1947/ OR/AND http://lic2:1947/ (If http://localhost:1947/ does not open in Chrome, open it in Firefox.)
+2. Under Options, click on Configuration
+3. Click on Access to Remote License Managers
+4. In the Specify Search Parameters box, put in lic2
+5. Click to enable Aggressive Search for Remote Licenses
+6. Click the Submit button
+7. After a couple of minutes, Sentinel Keys, Products and Featues (all under Options) should populate with stuff when you click on them.
+8. Confirm the program is working by opening Marvellous Designer 4/7 Enterprise Network and entering these credentials:
+Username: dnegtech
+Password: dnegtech
+9. Give it a while, it may launch or detect the license immediately.
+10. If it still doesn't work, repeat from step 2 for both http://localhost:1947/ AND http://lic2:1947/
+#################################
+http://jira/browse/TECH-1016945 --> E-drive expansion
+1.open Vcenter
+2.poweroff the VM
+3.edit settings of the VM and extended disk2 from500GB to 1TB
+4.saved settings,
+5.power on theVM
+6.open partition manager
+7.right click on the second disk, select resize/format
+8.allocate all the free space,
+9.press enter
+
+Work done
+##################################
+http://jira/browse/TECH-1017640 --> strawberry install
+
+//dist/dist/win/ need to search for strawberry
+install it..,
+for licencing we need to change the system default settings by running the below salt script
+salt-call state.sls roles.editorial
+reboot the machine once
+
+it will aquire the license automatically
+#################################
+http://jira/browse/TECH-1024886 --> ftp creation
+login to london techvlan machine
+Then login to ftp as root <ftp is a cname for extftp1>
+# cvkr@lonws1301 /u/cvkr ssh root@ftp
+# root@extftp1:~#
+run ftpnewuser <username> "<SHOWNAME> <JIRA Ticket Number>" - for show-related ftp sites
+# ftpnewuser rsavv "NECRUS_{something else should be given} TECH-1024886"
+choose a password
+type it and confirm it again
+
+Then update the ftp name and password in ~/git/site-etc-cfg-systems/zero/ftp
+
+forward the credential as per the site policies,
+
+for LON
+
+###############################
+http://jira/browse/TECH-1024895 to access document shared with client
+
+I've added Kat Navassartian into dneg-drive-extshare.
+
+[2023-04-26 04:16:55,630] Adding kn@dneg.com to dneg-drive-extshare@dneg.com
+[2023-04-26 04:17:01,219] Done.
+
+###################################
+
+Please try this workaround for now:
+
+Close all google chrome tabs/windows
+Run this command in the terminal of your remote machine
+google-chrome-stable --proxy-auto-detect
+It will launch a new google chrome window where all apps will work.
+If you get a pop up asking for password, just cancel it.
+
+Let us know. Thanks!
+
+#####################################
+http://jira/browse/TECH-1025383 --> installed apps not shows on user login
+
+I've installed all the apps, for your reference,
+please check the screenshot,
+and please try to launch the apps from the below paths
+1. Pureref :- "C:\Program Files\PureRef\PureRef.exe"
+2. latest Blender :- "C:\Program Files\Blender Foundation\Blender 3.0\blender-launcher.exe"
+3. Gaea :- "C:\Program Files\QuadSpinner\Gaea\Gaea.exe"
+4. latest Unreal Engine :- install setup.exe and unreal updater, open it through the installer in bottom right corner in task bar,
+right click on it and press on update unreal and select the updater and select the desired version and install it,
+
+Thanks
+Venkat
+
+##################################
+userchk
+login to vanbatch1
+ssh vanbatch1 or sh lonbatch1
+/tools/SITE/tech/bin/usersetup --archive --force
+################################
+http://jira/browse/TECH-1027300 --> authenticator timezone corrections
+you are entering the wrong OTP, please try to correct the timing in your authenticator settings
+open authenticator --> settings in options --> Time corrections for codes
+
+please try this and respond back
+
+Thanks
+Venkat
+#################################
+bitbucket access to the user
+
+cd /u/username/.ssh
+cat username_dneg.pub
+copy the public key
+open stash
+settings --> users--> username--> sshkeys--> addkey--> paste the public key
+
+Then we can ask the user to try
+
+################################
+zoom audio share while screenshare
+
+The solution is in Settings outside of
+PCoIP Client, under Sound- deselect Zoom to whatever else Output Device in
+the drop down and reselect Zoom, and make sure Share Audio is clicked on.
+
+Thanks Challa,
+#################################
+http://jira/browse/TECH-1035999 user account retire
+ssh zrobatch1 as root
+[chnws5245 11:15:45pm] [/u/cvkr]:sudo usersetup --retire -u ffov
+[2023-05-12 23:16:43,316] ad.dneg.com resolved to [10.27.20.21]
+[2023-05-12 23:17:07,499] Usersetup started
+[2023-05-12 23:24:06,057] Usersetup mode: RETIRE
+[2023-05-12 23:24:06,887] Retiring user ffov [Fabien Fovel]
+[2023-05-12 23:24:07,888] Response Code (PUT): 204
+[2023-05-12 23:24:11,313] Successfully retired user ffov [Fabien Fovel]
+
+##############################
+
+http://jira/browse/TECH-1037187 pcoip downgrading to lower version automatically
+
+############################
+http://jira/browse/TECH-1038487 all show access or Spider Access
+need to take is approval @ need to fillup the form provided in the dnet page,
+after that
+--> vim  ~/git/ldap/ldapsync/adsync.pm
+we need to add the user entry in the file under my @defmem_vfx = (  @defmem_all,
+after the sync user will get the access to all the show directories
+
+##################
+http://jira/browse/TECH-1029698 excel in mac
+
+need to take the excel permission for the licensing part
+go to portal.office.com,
+login with the user credentials,
+download option will appear there download the package,
+install it  by entering the admin credentials
+
+####################
+http://jira/browse/TECH-1044960 salt master key error
+##################
+http://jira/browse/TECH-1046177 nuke snippet
+sudo su
+cd /u/<uname>
+//lrwxrwxrwx  1 scos user      35 Apr 28 03:22 .snippet -> /hosts/lonws2060/user_data/.snippet
+=>unlink .snippet
+create /user_data/.snippet/nuke folder
+=> mkdir /user_data/.snippet/nuke
+
+//If you get this below error then folder already exists, so no need to create (create a link only)
+vanws1800 /u/hac # mkdir /user_data/.snippet/nuke
+mkdir: cannot create directory ‘/user_data/.snippet/nuke’: File exists
+
+and create symlink,
+=>ln -s /hosts/machinename/user_data/.snippet .snippet
+replace the machine with user's machine name..
+
+Ask user to reboot his machine once to check that machine is working fine or not
+######################
+Cinema 4d install from path /dist/dist/win/cinema4d/S24/
+
+License type is RLM
+server zrolic1
+port 6112
+######################
+That machine has EIZO set in it's config as your display type. The last edit looks to be Feb2020.
+
+Did you change machine or display recently?
+
+I'll make a ticket with TECH to have it removed and DCCs will revert to sRGB display, but it would be good to try and understand why this has only just changed for you
+
+micp@mtlws124 /u/micp cat /etc/X11/xorg.conf.d/04-pcoip-eizo.conf
+Section "Screen"
+ Identifier "dummy_screen"
+ Device "dummy_videocard"
+ DefaultDepth 24
+ Monitor "Monitor0"
+ Option "UBB" "1"
+ Option "FlatPanelProperties" "Dithering=Disabled"
+ Option "CustomEDID" "DFP:/usr/share/pcoip-agent/1024x768.bin; DFP-0:/usr/share/pcoip-agent/CG247X.edid"
+EndSection
+########################
+
+http://jira/browse/TECH-1057498 -- transfer taking more time, site queue is toohigh
+http://jira/browse/TECH-1055972 -- transfers ticket naming convention error
+
+--> hikeui,transfers ui 503 error,
+
+http://hike/ui/ (Hike, in your site)
+Select 'Mumbai' and 'Production'
+Check all the boxes are green
+http://mumsdiproxy2:9011/   (the site's sdi proxy host's supervisord page)
+See if reload-haproxy is running in supervisord
+http://mumsdiproxy2:1936/    (the site's sdi proxy's stats page)
+See if anything looks red
+Back to http://mumsdiproxy2:9011/ , hit stop on reload-haproxy
+ssh mumsdiproxy1
+ps -ef | grep hap
+Back to http://mumsdiproxy2:9011/ , hit start on reload-haproxy
+Back to mumsdiproxy1 to run: ps -ef | grep hap
+See if there are two haproxys running, the older one should've stopped
+sudo kill theoldhaproxyspid
+ps -ef | grep hap
+Back to http://mumsdiproxy2:1936/ where everything should look green
+remote mum
+Open a browser in the remote mum session, go to transfers/ui/ , if it loads all is well.
+
+#########################
+http://jira/browse/TECH-1056174 slack and pycharm in linux
+##########################
+http://jira/browse/TECH-1054887 zoom encrypted messages
+after trying all the initial steps renamed the /u/username/.zoom/data
+###########################
+http://jira/browse/TECH-1056872 ffmpeg
+
+Copy and unpack the archive: "\\dist.zro.dneg.com\dist\epic\unrealengine-setup\Installers\ffmpeg.7z" to a local spot on the target user's machine
+Move the archive contents to C:\Program Files\ffmpeg (Cut and paste ok, will require admin bypass due to modifications of C:\Program Files)
+Modify the system environment variables to include "C:\Program Files\ffmpeg\bin" in the PATH variable. (Note do not use setx, as paths could be over 1024 characters and lead to truncation)
+Reboot the machine.
+Verify that the ffmpeg system is installed successfully via opening a command line window and entering ffmpeg -version
+
+#############################
+http://jira/browse/TECH-1057515 mumlic2 dneg_rlm service restart
+http://jira/browse/TECH-1057518 peregrine_rlm service restart
+
+#######################33
+http://jira/browse/TECH-1058092 poweruser access
+Through google admin page,
+change the organisational unit to power user
+##################################
+
+
+
+
